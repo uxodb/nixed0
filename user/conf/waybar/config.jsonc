@@ -1,0 +1,26 @@
+{
+  "output": "Virtual-1",
+  "height": 48, 
+  "layer": "top", 
+  "position": "bottom",
+  "margin": "0px 0px 0px 0px",
+
+  "include": ["~/.config/waybar/modules.json"],
+
+  "modules-left": [
+      "custom/power-button",
+      "hyprland/workspaces",
+      "custom/keyboard", 
+      "group/pomo"
+  ],
+
+  "modules-center": [],
+
+  "modules-right": [
+      "group/sys",
+      "group/sys-info",
+      "tray",
+      "group/clockdate",
+      "custom/swaync"
+  ]
+}
