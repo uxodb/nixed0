@@ -6,10 +6,8 @@
     xwayland.enable = true;
   };
 
-  programs = {
-    hyprlock.enable = true;
-    hyprpaper.enable = true;
-  };
+  programs.hyprlock.enable = true;
+  services.hyprpaper.enable = true;
 
   xdg.configFile."hypr/".source =
     config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr";
