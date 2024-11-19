@@ -10,10 +10,22 @@
   services.hyprpaper.enable = true;
 
   xdg.configFile = {
-    "hypr/hyprpaper.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr/hyprpaper.conf";
-    "hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr/hyprland.conf";
-    "hypr/hyprpaper.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr/hyprpaper.conf";
-    "hypr/wallpapers/".source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr/wallpapers";
+    "hypr/hyprlock.conf" = {
+      enable = false;
+    };
+    "hypr/hyprland.conf" = {
+      enable = false;
+    };
+    "hypr/hyprpaper.conf" = {
+      enable = false;
+    };
+    "hypr/wallpapers/" = {
+      enable = false;
+    };
+    "hypr/" = {
+      recursive = true;
+      source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr"
+    };
   };
 }
 
