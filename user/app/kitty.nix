@@ -5,6 +5,6 @@
     # themeFile = "Catppuccin-Mocha";
   };
 
-  xdg.configFile."kitty/kitty.conf".source = 
-    ../conf/kitty/kitty.conf;
+  xdg.configFile."kitty/".source = 
+    ../conf/kitty/;
 }
