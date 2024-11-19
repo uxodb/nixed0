@@ -19,9 +19,6 @@
 # "hypr/hyprpaper.conf" = {
     #   enable = false;
     # };
-    "hypr/wallpapers/" = {
-      enable = false;
-    };
     "hypr/" = {
       recursive = true;
       source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr";
