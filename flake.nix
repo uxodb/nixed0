@@ -37,6 +37,7 @@
         locale = "en_US.UTF-8";
         username = "uxodb";
 	hostname = "nixed0";
+	appConfig = "/home/uxodb/flakes/user/conf";
       };
     in
   {
