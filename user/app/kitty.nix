@@ -5,5 +5,5 @@
   };
 
   xdg.configFile."kitty/".source = 
-    ../conf/kitty/;
+    ../conf/kitty;
 }
