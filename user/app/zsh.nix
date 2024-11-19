@@ -7,8 +7,5 @@
     enableCompletion = true;
     defaultKeymap = "emacs";
     syntaxHighlighting.enable = true;
-    # initExtra = ''
-  
-    #envExtra = '' '';
   };
 }
