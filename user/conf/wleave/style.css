@@ -37,26 +37,26 @@ button:focus {
 }
 
 
-#lock {
-    background-image: image(url("/usr/share/wleave/icons/lock.svg"), url("/usr/local/share/wlogout/icons/lock.svg"));
+#lock:focus {
+    background-image: url("assets/lock.svg");
 }
 
 #logout {
-    background-image: image(url("/usr/share/wleave/icons/logout.svg"), url("/usr/local/share/wlogout/icons/logout.svg"));
+    background-image: url("/home/uxodb/.config/wleave/assets/logout.svg");
 }
 
 #suspend {
-    background-image: image(url("/usr/share/wleave/icons/suspend.svg"), url("/usr/local/share/wlogout/icons/suspend.svg"));
+    background-image: image(url("/home/uxodb/.config/wleave/assets/suspend.svg"));
 }
 
 #hibernate {
-    background-image: image(url("/usr/share/wleave/icons/hibernate.svg"), url("/usr/local/share/wlogout/icons/hibernate.svg"));
+    background-image: image(url("/home/uxodb/.config/wleave/assets/hibernate.svg"));
 }
 
 #shutdown {
-    background-image: image(url("/usr/share/wleave/icons/shutdown.svg"), url("/usr/local/share/wlogout/icons/shutdown.svg"));
+    background-image: image(url("/home/uxodb/.config/wleave/assets/shutdown.svg"));
 }
 
 #reboot {
-    background-image: image(url("/usr/share/wleave/icons/reboot.svg"), url("/usr/local/share/wlogout/icons/reboot.svg"));
+    background-image: image(url("/home/uxodb/.config/wleave/assets/reboot.svg"));
 }
