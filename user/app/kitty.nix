@@ -4,6 +4,8 @@
     enable = true;
   };
 
-  xdg.configFile."kitty/".source = 
-    ../conf/kitty;
+  xdg.configFile."kitty/" = { 
+    enable = false;
+    source = ../conf/kitty;
+  };
 }

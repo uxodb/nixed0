@@ -7,7 +7,7 @@
   };
 
   programs.hyprlock.enable = true;
-  services.hyprpaper.enable = true;
+  # services.hyprpaper.enable = true;
 
   xdg.configFile = {
     "hypr/hyprlock.conf" = {
@@ -16,15 +16,15 @@
     "hypr/hyprland.conf" = {
       enable = false;
     };
-    "hypr/hyprpaper.conf" = {
-      enable = false;
-    };
+# "hypr/hyprpaper.conf" = {
+    #   enable = false;
+    # };
     "hypr/wallpapers/" = {
       enable = false;
     };
     "hypr/" = {
       recursive = true;
-      source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr"
+      source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr";
     };
   };
 }
