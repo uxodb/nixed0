@@ -21,9 +21,14 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pomodoro-cli = {
+      url = "path:./user/pkg/pomodoro-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+   };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, ... }@inputs:
+
+  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, pomodoro-cli, ... }@inputs:
 
     let
       xSettings = {
@@ -45,6 +50,7 @@
       modules = [
         ./host/configuration.nix
         sops-nix.nixosModules.sops
+	packages.${xSettings.system}.pomodoro-cli
       ];
     };
 
