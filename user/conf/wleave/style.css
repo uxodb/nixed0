@@ -1,0 +1,62 @@
+@import url("../waybar/catppuccin-mocha.css");
+
+* {
+	background-image: none;
+  transition: 20ms;
+  font-family: Roboto Mono, monospace;
+}
+window {
+	background-color: alpha(@crust, 0.8);
+	/* background-color: transparent; */
+}
+.horizontal {
+  padding: 100px 300px;
+}
+
+button {
+  all: unset;
+	border-radius: 4px;
+  margin: 10px;
+  color: @text;
+	background-color: alpha(@base, 0.08);
+	background-repeat: no-repeat;
+	background-position: center;
+  background-size: 15%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+button:active, button:hover {
+	background-color: alpha(currentColor, 0.1);
+	outline-style: none;
+}
+
+button:focus {
+  color: @blue;
+  background-size: 20%;
+}
+
+
+#lock {
+    background-image: image(url("/usr/share/wleave/icons/lock.svg"), url("/usr/local/share/wlogout/icons/lock.svg"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wleave/icons/logout.svg"), url("/usr/local/share/wlogout/icons/logout.svg"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wleave/icons/suspend.svg"), url("/usr/local/share/wlogout/icons/suspend.svg"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wleave/icons/hibernate.svg"), url("/usr/local/share/wlogout/icons/hibernate.svg"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wleave/icons/shutdown.svg"), url("/usr/local/share/wlogout/icons/shutdown.svg"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wleave/icons/reboot.svg"), url("/usr/local/share/wlogout/icons/reboot.svg"));
+}

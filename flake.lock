@@ -33,6 +33,22 @@
         "type": "github"
       }
     },
+    "crate2nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730277369,
+        "narHash": "sha256-yvQbeJbnnwCB68yv7uZXdGb+P7NMn5JMGBw0aBHymDI=",
+        "owner": "kolloch",
+        "repo": "crate2nix",
+        "rev": "151122427d030874ebef3517cda766a6984e6ed6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kolloch",
+        "repo": "crate2nix",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -46,6 +62,24 @@
       "original": {
         "owner": "edolstra",
         "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },
@@ -316,6 +350,25 @@
         "type": "github"
       }
     },
+    "pomodoro-cli": {
+      "inputs": {
+        "crate2nix": "crate2nix",
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-N04nXpQqD+hfflhsd1BskXraokyZPhxg2HQeJ4sUSk0=",
+        "path": "./user/pkg/pomodoro-cli",
+        "type": "path"
+      },
+      "original": {
+        "path": "./user/pkg/pomodoro-cli",
+        "type": "path"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -346,6 +399,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs",
+        "pomodoro-cli": "pomodoro-cli",
         "sops-nix": "sops-nix",
         "ucodenix": "ucodenix"
       }
@@ -383,6 +437,21 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
         "type": "github"
       }
     },
