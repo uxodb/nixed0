@@ -50,7 +50,11 @@
       modules = [
         ./host/configuration.nix
         sops-nix.nixosModules.sops
-	packages.${xSettings.system}.pomodoro-cli
+	{
+	  environment.systemPackages = [
+            pomodoro-cli.packages.${xSettings.system}.pomodoro-cli
+          ];
+	}
       ];
     };
 
