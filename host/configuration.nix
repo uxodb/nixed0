@@ -61,7 +61,10 @@
     ckb-next.enable = true;
     amdgpu.amdvlk.enable = true;
   };
-
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
 
   security = {
     rtkit.enable = true;
