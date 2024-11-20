@@ -33,7 +33,7 @@
     let
       xSettings = {
         system = "x86_64-linux";
-        timezone = "Europe/Amsterdam";
+        timezone = "Europe/Vienna";
         locale = "en_US.UTF-8";
         username = "uxodb";
 	hostname = "nixed0";
