@@ -36,27 +36,27 @@ button:focus {
   background-size: 20%;
 }
 
-
+/*image(url(""));*/
 #lock:focus {
     background-image: url("assets/lock.svg");
 }
 
 #logout {
-    background-image: url("/home/uxodb/.config/wleave/assets/logout.svg");
+    background-image: url("assets/logout.svg");
 }
 
 #suspend {
-    background-image: image(url("/home/uxodb/.config/wleave/assets/suspend.svg"));
+    background-image: url("assets/suspend.svg");
 }
 
 #hibernate {
-    background-image: image(url("/home/uxodb/.config/wleave/assets/hibernate.svg"));
+    background-image: url("assets/hibernate.svg");
 }
 
 #shutdown {
-    background-image: image(url("/home/uxodb/.config/wleave/assets/shutdown.svg"));
+    background-image: url("assets/shutdown.svg");
 }
 
 #reboot {
-    background-image: image(url("/home/uxodb/.config/wleave/assets/reboot.svg"));
+    background-image: url("assets/reboot.svg");
 }
