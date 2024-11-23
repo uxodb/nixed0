@@ -72,11 +72,13 @@
   };
 
   users.users.${xSettings.username} = {
+    mutableUsers = false;
     isNormalUser = true;
     description = xSettings.username;
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     uid = 1000;
+    hashedPasswordFile = config.sops.secrets.userpasswd.path; 
   };
 
   system.stateVersion = "24.05"; # Did you read the comment?
