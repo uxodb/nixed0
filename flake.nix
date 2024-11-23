@@ -28,46 +28,50 @@
   };
 
 
-  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, pomodoro-cli, ... }@inputs:
-
-    let
+  outputs = 
+    { self, nixpkgs, home-manager, hyprland, flake-utils, sops-nix, pomodoro-cli, ... }@inputs:
+    let 
       xSettings = {
         system = "x86_64-linux";
         timezone = "Europe/Vienna";
         locale = "en_US.UTF-8";
         username = "uxodb";
-	hostname = "nixed0";
-	appConfig = "/home/uxodb/flakes/user/conf";
+        hostname = "nixed0";
+        appConfig = "/home/uxodb/flakes/user/conf";
       };
+      xpkgs = nixpkgs.legacyPackages.${xSettings.system};
     in
-  {
-    nixosConfigurations.nixed0 = nixpkgs.lib.nixosSystem {
-      system = xSettings.system;
-      specialArgs = { 
-	inherit inputs; 
-	inherit xSettings;
+    {
+      devShells.${xSettings.system} = {
+        default = import ./shell/build.nix { pkgs = xpkgs; };
       };
 
-      modules = [
-        ./host/configuration.nix
-        sops-nix.nixosModules.sops
-	{
-	  environment.systemPackages = [
-            pomodoro-cli.packages.${xSettings.system}.pomodoro-cli
-          ];
-	}
-      ];
-    };
-
-    homeConfigurations."uxodb@nixed0" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      extraSpecialArgs = { 
-        inherit inputs; 
-	inherit xSettings;
+      nixosConfigurations.nixed0 = nixpkgs.lib.nixosSystem {
+        system = xSettings.system;
+        specialArgs = { 
+	  inherit inputs; 
+	  inherit xSettings;
+        };
+        modules = [
+          ./host/configuration.nix
+          sops-nix.nixosModules.sops
+	  {
+	    environment.systemPackages = with xSettings; [
+              pomodoro-cli.packages.${system}.pomodoro-cli
+            ];
+	  }
+        ];
       };
-      modules = [
-        ./user/home.nix
-      ];
+
+      homeConfigurations."uxodb@nixed0" = home-manager.lib.homeManagerConfiguration {
+        pkgs = xpkgs;
+        extraSpecialArgs = { 
+          inherit inputs; 
+	  inherit xSettings;
+        };
+        modules = [
+          ./user/home.nix
+        ];
+      };
     };
-  };
 }
