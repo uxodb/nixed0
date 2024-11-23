@@ -29,7 +29,7 @@
 
 
   outputs = 
-    { self, nixpkgs, home-manager, hyprland, flake-utils, sops-nix, pomodoro-cli, ... }@inputs:
+    { self, nixpkgs, home-manager, hyprland, sops-nix, pomodoro-cli, ... }@inputs:
     let 
       xSettings = {
         system = "x86_64-linux";
@@ -43,7 +43,7 @@
     in
     {
       devShells.${xSettings.system} = {
-        default = import ./shell/build.nix { pkgs = xpkgs; };
+        default = import ./shell/build.nix { pkgs = xpkgs; inherit xSettings; };
       };
 
       nixosConfigurations.nixed0 = nixpkgs.lib.nixosSystem {

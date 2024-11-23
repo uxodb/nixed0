@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, xSettings }:
 with pkgs;
 mkShell {
   buildInputs = [
@@ -9,10 +9,12 @@ mkShell {
   ];
 
   shellHook = ''
+    mkdir /home/uxodb/.ssh
+    mkdir -p /home/uxodb/.config/sops/age
     echo "##############################################################"
     echo "#### Entered shell with cmake, git, sops and home-manager ####"
     echo "#### --                                                   ####"
-    echo "#### Remember, ~/.config/sops/age/keys.txt                ####"
+    echo "#### Remember age keys.txt                                ####"
     echo "##############################################################"
   '';
 }
