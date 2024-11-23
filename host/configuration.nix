@@ -71,8 +71,8 @@
     sudo.wheelNeedsPassword = false;
   };
 
+  users.mutableUsers = false;
   users.users.${xSettings.username} = {
-    mutableUsers = false;
     isNormalUser = true;
     description = xSettings.username;
     extraGroups = [ "wheel" ];
