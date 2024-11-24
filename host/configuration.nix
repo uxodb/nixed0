@@ -72,8 +72,7 @@
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     uid = 1000;
-    password = "aaaaaa";
-    # hashedPasswordFile = config.sops.secrets.userpasswd.path; 
+    hashedPasswordFile = config.sops.secrets.userpasswd.path; 
   };
 
   system.stateVersion = "24.05"; # Did you read the comment?
