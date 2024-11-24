@@ -11,6 +11,12 @@ home:
 update:
 	sudo nix flake update
 
+build:
+	@echo "Don't forget to mount volume!!!"
+	@echo "Don't forget to mount volume!!!"
+	@sleep 5
+	nixos-install --root /mnt/ --flake .#nixed0
+
 whatif: 
 	sudo nixos-rebuild dry-activate --flake .#nixed0
 
