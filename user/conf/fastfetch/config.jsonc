@@ -10,7 +10,7 @@
         //    "4": "blue",
         //    "5": "green"
         //}
-        "source": "nixos.png",
+        "source": "~/.config/fastfetch/nixos.png",
         "type": "kitty-direct",
         "height": 16,
         "width": 34,
