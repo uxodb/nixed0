@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pomodoro-cli = {
-      url = "path:./user/pkg/pomodoro-cli";
+      url = "github:uxodb/nixed0?dir=user/pkg/pomodoro-cli";
       inputs.nixpkgs.follows = "nixpkgs";
    };
   };
