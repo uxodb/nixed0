@@ -4,8 +4,8 @@
     enable = true;
   };
   
-  xdg.configFile."waybar/" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/waybar";
+  xdg.configFile."waybar/" = with xSettings; {
+    source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/waybar";
     recursive = true;
   };
   xdg.configFile = {

@@ -3,8 +3,9 @@
   services.swaync = {
     enable = true;
   };
-  xdg.configFile."swaync/".source =
-    config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/swaync";
+  xdg.configFile."swaync/" = with xSettings; {
+    source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/swaync";
+  };
 
   xdg.configFile = {
     "swaync/config.json".enable = false;

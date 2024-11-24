@@ -359,14 +359,19 @@
         ]
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-N04nXpQqD+hfflhsd1BskXraokyZPhxg2HQeJ4sUSk0=",
-        "path": "./user/pkg/pomodoro-cli",
-        "type": "path"
+        "dir": "user/pkg/pomodoro-cli",
+        "lastModified": 1732408449,
+        "narHash": "sha256-VEpvQd6zcaYdw7up7KON54WSweoXTUjBAPobozbWgVI=",
+        "owner": "uxodb",
+        "repo": "nixed0",
+        "rev": "53566f514d2685787c8b96c4d6c9cb5bc5af7af6",
+        "type": "github"
       },
       "original": {
-        "path": "./user/pkg/pomodoro-cli",
-        "type": "path"
+        "dir": "user/pkg/pomodoro-cli",
+        "owner": "uxodb",
+        "repo": "nixed0",
+        "type": "github"
       }
     },
     "pre-commit-hooks": {

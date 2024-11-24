@@ -4,7 +4,7 @@
   home.packages = [
     pkgs.wleave
   ];
-  xdg.configFile."wleave" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/wleave";
+  xdg.configFile."wleave" = with xSettings; {
+    source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/wleave";
   };
 }

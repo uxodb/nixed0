@@ -4,8 +4,9 @@
     enable = true;
   };
 
-  xdg.configFile."kitty/".source = 
-    config.lib.file.mkOutOfStoreSymlink /home/uxodb/flakes/user/conf/kitty;
+  xdg.configFile."kitty/" = with xSettings; {
+    source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/kitty";
+  };
 
   xdg.configFile."kitty/kitty.conf".enable = false;
 }

@@ -19,9 +19,9 @@
 # "hypr/hyprpaper.conf" = {
     #   enable = false;
     # };
-    "hypr/" = {
+    "hypr/" = with xSettings; {
       recursive = true;
-      source = config.lib.file.mkOutOfStoreSymlink "/home/uxodb/flakes/user/conf/hypr";
+      source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/hypr";
     };
   };
 }
