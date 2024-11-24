@@ -28,19 +28,19 @@ mkShell {
 		read -p "Choose option [1-4]: " choice
 	
 		case "$choice" in
-			1) if mkdir ~/.ssh; then
+			1) if mkdir $HOME/.ssh; then
 				echo "SSH folder created."
 			else
 				echo "Failed to create SSH folder."
 			fi;;
-			2) if mkdir -p ~/.config/sops/age && touch ~/.config/sops/age/keys.txt; then
+			2) if mkdir -p $HOME/.config/sops/age && touch $HOME/.config/sops/age/keys.txt; then
 				echo "SOPS file prep succeeded."
 			else
 				echo "SOPS file prep failed."
 			fi;;
 			3) nix_hw="/etc/nixos/hardware-configuration.nix"
-			0_hw="~/nixed0/host/hardware.nix"
-			if cp "$nix_hw" "$0_hw"; then
+			n0_hw="$HOME/nixed0/host/hardware.nix"
+			if cp "$nix_hw" "$n0_hw"; then
 				echo "Hardware config copied."
 			else
 				echo "Hardware config copy failed."
