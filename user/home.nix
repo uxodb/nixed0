@@ -30,7 +30,6 @@
       curl
       nix-search-cli
       wofi
-      firefox
       gnumake
       ssh-to-age
       (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
