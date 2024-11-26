@@ -1,15 +1,15 @@
 { config, pkgs, lib, xSettings, ... }: {
 
-  programs.firefox = with xSettings; {
+  programs.firefox = with config; {
     enable = true;
     profiles.default = {
       id = 0;
       name = "personal";
       isDefault = true;
-      path = "~/.config/firefox/personal";
+      path = "${xdg.configHome}/firefox/personal/";
     };
     policies = {
-      DefaultDownloadDirectory = "/home/${username}/downloads";
+      DefaultDownloadDirectory = "${home.homeDirectory}/Downloads";
       NoDefaultBookmarks = true;
       PasswordManagerEnabled = false;
       DisableTelemetry = true;
