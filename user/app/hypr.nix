@@ -1,4 +1,9 @@
-{ config, pkgs, lib, xSettings, ...}: { 
+{ config, pkgs, lib, xSettings, ...}:
+
+let
+  inherit (xSettings) appConfig;
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+in {
   
   wayland.windowManager.hyprland = {
     enable = true;
@@ -19,9 +24,9 @@
 # "hypr/hyprpaper.conf" = {
     #   enable = false;
     # };
-    "hypr/" = with xSettings; {
+    "hypr/" = {
       recursive = true;
-      source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/hypr";
+      source = mkOutOfStoreSymlink "${appConfig}/hypr";
     };
   };
 }

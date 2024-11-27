@@ -1,10 +1,15 @@
-{ config, pkgs, lib, xSettings, ... }: {
+{ config, pkgs, lib, xSettings, ... }:
+
+let
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+  inherit (xSettings) appConfig;
+in {
 
   services.swaync = {
     enable = true;
   };
-  xdg.configFile."swaync/" = with xSettings; {
-    source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/swaync";
+  xdg.configFile."swaync/" = {
+    source = mkOutOfStoreSymlink "${appConfig}/swaync";
   };
 
   xdg.configFile = {

@@ -1,10 +1,15 @@
-{ config, pkgs, lib, xSettings, ... }: {
+{ config, pkgs, lib, xSettings, ... }:
+
+let
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+  inherit (xSettings) appConfig;
+in {
 
   programs.fastfetch = {
     enable = true;
   };
-  xdg.configFile."fastfetch/" = with xSettings; {
-    source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/fastfetch";
+  xdg.configFile."fastfetch/" = {
+    source = mkOutOfStoreSymlink "${appConfig}/fastfetch";
   };
 
   xdg.configFile = {

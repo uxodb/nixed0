@@ -1,11 +1,16 @@
-{ config, pkgs, lib, xSettings, ... }: {
+{ config, pkgs, lib, xSettings, ... }:
+
+let
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+  inherit (xSettings) appConfig;
+in {
 
   programs.waybar = {
     enable = true;
   };
   
-  xdg.configFile."waybar/" = with xSettings; {
-    source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/waybar";
+  xdg.configFile."waybar/" = {
+    source = mkOutOfStoreSymlink "${appConfig}/waybar";
     recursive = true;
   };
   xdg.configFile = {

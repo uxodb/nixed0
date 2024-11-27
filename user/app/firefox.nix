@@ -1,6 +1,12 @@
-{ config, pkgs, lib, xSettings, ... }: {
+{ config, pkgs, lib, xSettings, ... }: 
 
-  programs.firefox = with config; {
+let
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+  inherit (xSettings) appConfig;
+  inherit (config.home) homeDirectory;
+in {
+
+  programs.firefox = {
     enable = true;
     profiles.default = {
       id = 0;
@@ -9,7 +15,7 @@
       path = "personal";
     };
     policies = {
-      DefaultDownloadDirectory = "${home.homeDirectory}/Downloads";
+      DefaultDownloadDirectory = "${homeDirectory}/Downloads";
       NoDefaultBookmarks = true;
       PasswordManagerEnabled = false;
       DisableTelemetry = true;
@@ -29,18 +35,18 @@
       };
     };
   };
-  home.file = with xSettings; {
+  home.file = {
     ".mozilla/firefox/personal/chrome" = {
       recursive = true;
-      source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/firefox/personal/chrome";
+      source = mkOutOfStoreSymlink "${appConfig}/firefox/personal/chrome";
     };
     ".mozilla/firefox/personal/user.js" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${appConfig}/firefox/personal/user.js";
+      source = mkOutOfStoreSymlink "${appConfig}/firefox/personal/user.js";
     };
   };
 
-  xdg.configFile."firefox/" = with config; {
+  xdg.configFile."firefox/" = {
     recursive = true;
-    source = config.lib.file.mkOutOfStoreSymlink "${home.homeDirectory}/.mozilla";
+    source = mkOutOfStoreSymlink "${homeDirectory}/.mozilla";
   };
 }
