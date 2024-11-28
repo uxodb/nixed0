@@ -25,6 +25,7 @@
       eza
       tree
       jq
+      fd
       fzf
       wget
       curl
