@@ -32,7 +32,9 @@
       wofi
       gnumake
       ssh-to-age
-      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      font-awesome
+      nerdfonts
+#      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     ];
   };
   
