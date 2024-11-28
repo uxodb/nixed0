@@ -34,6 +34,8 @@
       ssh-to-age
       font-awesome
       nerdfonts
+      unzip
+      nodejs_23
 #      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     ];
   };
