@@ -9,6 +9,11 @@ in {
     enable = true;
     viAlias = true;
     vimAlias = true;
+    extraPackages = [
+      pkgs.gcc
+      pkgs.nodejs_23
+      pkgs.unzip
+    ];
   };
 
   xdg.configFile."nvim/" = {
