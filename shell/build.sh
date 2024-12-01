@@ -1,4 +1,4 @@
-#!/usr/env/bash
+#!/usr/bin/env bash
 
 menu() {
     while true; do
