@@ -30,7 +30,6 @@
       wget
       curl
       nix-search-cli
-      wofi
       gnumake
       ssh-to-age
       font-awesome
