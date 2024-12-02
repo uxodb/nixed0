@@ -36,6 +36,7 @@
       font-awesome
       nerdfonts
       swww
+      plex-desktop
       vesktop;
 #      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     };
