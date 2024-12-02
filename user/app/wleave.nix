@@ -9,6 +9,7 @@ in {
     pkgs.wleave
   ];
   xdg.configFile."wleave" = {
+    recursive = true;
     source = mkOutOfStoreSymlink "${appConfig}/wleave";
   };
 }
