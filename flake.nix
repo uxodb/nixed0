@@ -37,7 +37,7 @@
         locale = "en_US.UTF-8";
         username = "uxodb";
         hostname = "nixed0";
-        appConfig = "${self}/user/conf";
+        appConfig = "/home/uxodb/nixed0/user/conf";
       };
       xpkgs = nixpkgs.legacyPackages.${xSettings.system};
     in
