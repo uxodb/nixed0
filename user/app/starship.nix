@@ -1,7 +1,15 @@
-{ config, pkgs, lib, xSettings, ... }: {
+{ config, pkgs, lib, xSettings, ... }:
+
+let
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+  inherit (xSettings) appConfig;
+in {
 
   programs.starship = {
     enable = true;
-    settings = lib.importTOML ../conf/starship/starship.toml;
+  };
+
+  xdg.configFile."starship.toml" = {
+    source = mkOutOfStoreSymlink "${appConfig}/starship/starship.toml"
   };
 }
