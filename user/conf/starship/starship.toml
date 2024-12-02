@@ -1,10 +1,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](base)\
+[](fg:base_macchiato)\
 $os\
 $username\
-[](bg:peach fg:base)\
+[](bg:peach fg:base_macchiato)\
 $directory\
 [](fg:peach bg:green)\
 $git_branch\
@@ -96,12 +96,13 @@ surface2 = "#585b70"
 surface1 = "#45475a"
 surface0 = "#313244"
 base = "#1e1e2e"
+base_macchiato = "#24273a"
 mantle = "#181825"
 crust = "#11111b"
 
 [os]
 disabled = false
-style = "bg:base fg:text"
+style = "bg:base_macchiato fg:text"
 
 [os.symbols]
 Windows = "󰍲"
@@ -127,7 +128,7 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:base fg:text"
+style_user = "bg:base_macchiato fg:text"
 style_root = "bg:color_orange fg:surface1"
 format = '[ $user ]($style)'
 

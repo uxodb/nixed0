@@ -10,6 +10,6 @@ in {
   };
 
   xdg.configFile."starship.toml" = {
-    source = mkOutOfStoreSymlink "${appConfig}/starship/starship.toml"
+    source = mkOutOfStoreSymlink "${appConfig}/starship/starship.toml";
   };
 }
