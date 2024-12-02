@@ -35,6 +35,7 @@
       ssh-to-age
       font-awesome
       nerdfonts
+      swww
       vesktop;
 #      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     };

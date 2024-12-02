@@ -12,7 +12,7 @@ in {
   };
 
   programs.hyprlock.enable = true;
-  services.hyprpaper.enable = true;
+  # services.hyprpaper.enable = true;
 
   xdg.configFile = {
     "hypr/hyprlock.conf" = {
@@ -21,9 +21,9 @@ in {
     "hypr/hyprland.conf" = {
       enable = false;
     };
-    "hypr/hyprpaper.conf" = {
-      enable = false;
-    };
+    # "hypr/hyprpaper.conf" = {
+    #   enable = false;
+    # };
     "hypr/" = {
       recursive = true;
       source = mkOutOfStoreSymlink "${appConfig}/hypr";
