@@ -19,7 +19,8 @@
     sessionVariables = {
       EDITOR = "nvim";
     };
-    packages = with pkgs; [
+    packages = builtins.attrValues {
+      inherit (pkgs)
       bat
       ripgrep
       eza
@@ -34,9 +35,9 @@
       ssh-to-age
       font-awesome
       nerdfonts
-      vesktop
+      vesktop;
 #      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    ];
+    };
   };
   
   programs.home-manager.enable = true;
