@@ -14,12 +14,11 @@
       "group/pomo"
   ],
 
-  "modules-center": [],
+  "modules-center": [ "tray"],
 
   "modules-right": [
       "group/sys",
       "group/sys-info",
-      "tray",
       "group/clockdate",
       "custom/swaync"
   ]

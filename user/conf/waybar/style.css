@@ -2,7 +2,9 @@
 @import url("catppuccin-mocha.css");
 
 #waybar {
-    background-color: @crust;
+    /* background-color: @crust; */
+    background-color: @surface1;
+    /* return to crust */
     color: @text;
     font-family: "SF Mono Regular", "JetBrainsMono Nerd Font",monospace;
     font-size: 16px;
@@ -15,7 +17,7 @@
 
 /* Make all the NF icons bigger */
 #sys-info,
-#custom-dunst,
+#custom-swaync,
 #pulseaudio,
 #sys,
 #custom-power-button,
@@ -42,7 +44,7 @@
 #workspaces,
 box.modules-right > box.horizontal,
 #sys-info,
-#custom-dunst,
+#custom-swaync,
 #sys,
 #custom-power-button,
 #custom-keyboard,
@@ -61,7 +63,7 @@ box.modules-right > box.horizontal,
 
 
 #custom-power-button,
-#custom-dunst,
+#custom-swaync,
 #custom-keyboard {
     padding-right: 17px;
     padding-left: 12px;
