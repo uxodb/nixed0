@@ -33,18 +33,11 @@
     "tooltip": false
   },
   "group/sys": {
-    "modules": [
-      "cpu",
-      "memory",
-      "temperature"
-    ],
+    "modules": ["cpu", "memory", "temperature"],
     "orientation": "inherit"
   },
   "group/clockdate": {
-    "modules": [
-      "clock#time",
-      "clock#date"
-    ],
+    "modules": ["clock#time", "clock#date"],
     "orientation": "inherit"
   },
   "cpu": {
@@ -65,10 +58,7 @@
     "max-length": 10
 },
   "group/sys-info": {
-    "modules": [
-      "network",
-      "group/volume"
-    ],
+    "modules": ["network", "group/volume"],
     "orientation": "horizontal"
   },
   "group/volume": {
@@ -77,10 +67,7 @@
       "transition-duration": 500,
       "transition-left-to-right": true
     },
-    "modules": [
-      "pulseaudio",
-      "pulseaudio/slider"
-    ],
+    "modules": ["pulseaudio", "pulseaudio/slider"],
     "orientation": "horizontal"
   },
   "hyprland/workspaces": {
@@ -103,9 +90,7 @@
     },
     "on-scroll-down": "hyprctl dispatch workspace e+1",
     "on-scroll-up": "hyprctl dispatch workspace e-1",
-    "persistent-workspaces": {
-      "*": 5
-    }
+    "persistent-workspaces": { "*": 5 }
   },
   "network": {
     "format": "{icon}",
@@ -125,8 +110,8 @@
     "on-click-right": "rfkill toggle wifi",
     "tooltip": true,
     "tooltip-format": "interface:\t{ifname}\n\nconnected to {essid} at {signalStrength}% strength",
-    "tooltip-format-disconnected": "interface: {ifname}\nconnected to {essid}\nat {signalStrength}% strength"
   },
+
   "pulseaudio": {
     "format": "{icon}",
     "format-bluetooth": "{icon}",

@@ -42,7 +42,7 @@
 
  /*Selecting every widget "group" */
 #workspaces,
-box.modules-right > box.horizontal,
+/* box.modules-right > box.horizontal, #not sure on or off*/
 #sys-info,
 #custom-swaync,
 #sys,
@@ -53,7 +53,7 @@ box.modules-right > box.horizontal,
     background-color: @mantle;
     /* border: red solid 1px; */
     border-radius: 4px;
-    margin: 3px 5px;
+    margin: 5px;
     padding: 5px 10px;
 }
 
@@ -121,11 +121,11 @@ box.modules-right > box.horizontal,
 }
 #workspaces {
     background-color: @mantle;
-    margin: 10px 5px;
+    margin: 5px; 
     border-radius: 4px;
 }
 #workspaces > button { 
-    padding: 0px 15px; 
+    padding: 5px 10px; 
     font-weight: 900;
     font-size: 20px;
     border-radius: 0px;
@@ -149,11 +149,11 @@ box.modules-right > box.horizontal,
 }
 #workspaces > button:first-child {
     border-radius: 4px 0px 0px 4px;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 #workspaces > button:last-child {
     border-radius: 0px 4px 4px 0px;
-    padding-right: 20px;
+    padding-right: 15px;
 }
 
 
@@ -184,14 +184,13 @@ box.modules-right > box.horizontal,
 
 /* Wifi module spaced away from bluetooth*/
 #network {
-    margin-right: 15px;
+    /* margin-right: 15px; */
+    padding-right: 15px;
 }
 
 #cpu {
-  margin-right: 15px;
-}
-#network {
-  margin-right: 18px;
+  /* margin-right: 15px; */
+  padding-right: 15px;
 }
 
 #pulseaudio {
@@ -231,18 +230,23 @@ box.modules-right > box.horizontal,
 }
 
 /* Styling the clock */
+/* padding: top bottom left right */
+/* top/bot left/right */
 #clockdate {
     background-color: @mantle;
-    /*margin: 10px 5px;*/
+    margin: 5px;
+    /* margin: 10px 5px; */
     border-radius: 5px;
+    padding: 5px 5px;
 }
 #clock.date {
     font-size: 14px;
     font-weight: normal;
     margin-left: 8px;
+    /* padding: 5px 10px; */
 }
 #clock.time {
-    padding: 0px;
+    /* padding: 5px 10px; */
     font-weight: 500;
     font-size: 20px;
 }
@@ -253,7 +257,7 @@ tooltip {
     background: @surface0;
 }
 tooltip > box {
-    padding: 15px
+    padding: 5px
 }
 tooltip label {
     color: @text;
