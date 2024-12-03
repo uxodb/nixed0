@@ -1,7 +1,8 @@
 { config, inputs, xSettings,  ... }:
 
 let
- inherit (config.users.users.uxodb.home) homeDir;
+  inherit (xSettings) username;
+  inherit (config.users.users.uxodb.home) homeDir;
 in {
 
   sops = {
