@@ -1,6 +1,5 @@
 
 @import url("catppuccin-mocha.css");
-
 #waybar {
     /* background-color: @crust; */
     background-color: @surface1;
@@ -12,8 +11,8 @@
 }
 
 /* Space first and last modules evenly */
-.modules-right:last-child { margin-right: 5px; }
-.modules-left:first-child { margin-left: 5px; }
+/* .modules-right:last-child { margin-right: 5px; } */
+/* .modules-left:first-child { margin-left: 5px; } */
 
 /* Make all the NF icons bigger */
 #sys-info,
@@ -159,9 +158,11 @@
 
 /* Styling tray */
 #tray {
-    background-color: transparent;
-    padding: 0px 0px;
-    margin: 0px;
+    /* background-color: transparent; */
+    background-color: @mantle;
+    padding: 0px 2px;
+    margin: 10px 0px;
+    border-radius: 15px;
 }
 #tray .active image {
     /* border: solid 1px red; */
