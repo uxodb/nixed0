@@ -2,7 +2,7 @@
 
 let
   inherit (xSettings) username;
-  inherit (config.users.users.uxodb.home) homeDir;
+  homeDir = config.users.users.uxodb.home;
 in {
 
   sops = {
