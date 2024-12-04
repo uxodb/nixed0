@@ -6,6 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hardware.url = "github:NixOS/nixos-hardware";
     ucodenix.url = "github:uxodb/ucodenix";
+    catppuccin.url = "github:catppuccin/nix";
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -29,7 +30,7 @@
 
 
   outputs = 
-    { self, nixpkgs, home-manager, hyprland, sops-nix, pomodoro-cli, ... }@inputs:
+    { self, nixpkgs, home-manager, hyprland, sops-nix, pomodoro-cli, catppuccin, ... }@inputs:
     let 
       xSettings = {
         system = "x86_64-linux";
@@ -71,6 +72,10 @@
         };
         modules = [
           ./user/home.nix
+          catppuccin.homeManagerModules.catppuccin
+          {
+            catppuccin.flavor = "mocha";
+          }
         ];
       };
     };
