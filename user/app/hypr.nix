@@ -9,6 +9,10 @@ in {
     enable = true;
     systemd.enable = false;
     xwayland.enable = true;
+    catppuccin = {
+      enable = true;
+      accent = "peach";
+    };
   };
 
   programs.hyprlock.enable = true;

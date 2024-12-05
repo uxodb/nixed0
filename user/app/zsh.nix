@@ -7,6 +7,7 @@
     enableCompletion = true;
     defaultKeymap = "emacs";
     syntaxHighlighting.enable = true;
+    syntaxHighlighting.catppuccin.enable = true;
     initExtra = ''
       fastfetch
     '';
