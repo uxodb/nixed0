@@ -37,7 +37,9 @@
       nerdfonts
       swww
       plex-desktop
-      vesktop;
+      vesktop
+      nautilus
+      nwg-look;
 #      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     };
   };
