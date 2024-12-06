@@ -20,7 +20,6 @@
 #pulseaudio,
 #sys,
 #custom-power-button,
-#custom-keyboard,
 #custom-pomo-icon
 {
     font-size: 18px;
@@ -46,7 +45,6 @@
 #custom-swaync,
 #sys,
 #custom-power-button,
-#custom-keyboard,
 #pomo
 {
     background-color: @mantle;
