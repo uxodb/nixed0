@@ -75,6 +75,11 @@
           catppuccin.homeManagerModules.catppuccin
           {
             catppuccin.flavor = "mocha";
+            catppuccin.pointerCursor.enable = true;
+            catppuccin.accent = "peach";
+            home.pointerCursor.gtk.enable = true;
+            gtk.catppuccin.enable = true;
+            gtk.enable = true;
           }
         ];
       };

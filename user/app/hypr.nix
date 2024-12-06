@@ -11,7 +11,6 @@ in {
     xwayland.enable = true;
     catppuccin = {
       enable = true;
-      accent = "peach";
     };
   };
 
