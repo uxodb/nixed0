@@ -1,8 +1,8 @@
 {
   "clock#date": {
     "actions": {
-      "on-scroll-down": "shift_down",
-      "on-scroll-up": "shift_up"
+      "on-scroll-down": "shift_up",
+      "on-scroll-up": "shift_down"
     },
     "calendar": {
       "format": {
@@ -19,7 +19,7 @@
     },
     "format": "{:%A, %b %e}",
     "interval": 43200,
-    "tooltip-format": "<span color='#cdd6f4' font='Roboto Mono 14'><small>{calendar}</small></span>"
+    "tooltip-format": "<span color='#cdd6f4' font='RobotoMono Nerd Font 14'><small>{calendar}</small></span>"
   },
   "clock#time": {
     "format": "{:%OI<small><span color='#9399b2'>:</span></small>%OM<span size='4pt'> </span><span weight='bold' size='10pt' color='#9399b2'>%p</span>}",
@@ -29,6 +29,7 @@
   "custom/swaync": {
     "exec": "~/.config/waybar/scripts/swaync.sh",
     "on-click": "swaync-client -d",
+    "on-click-right": "swaync-client -t",
     "restart-interval": 1,
     "tooltip": false
   },
