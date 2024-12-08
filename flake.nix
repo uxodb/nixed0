@@ -8,6 +8,11 @@
     ucodenix.url = "github:uxodb/ucodenix";
     catppuccin.url = "github:catppuccin/nix";
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +35,7 @@
 
 
   outputs = 
-    { self, nixpkgs, home-manager, hyprland, sops-nix, pomodoro-cli, catppuccin, ... }@inputs:
+    { self, nixpkgs, home-manager, hyprland, sops-nix, pomodoro-cli, catppuccin, stylix, ... }@inputs:
     let 
       xSettings = {
         system = "x86_64-linux";
@@ -56,6 +61,7 @@
         modules = [
           ./host/configuration.nix
           sops-nix.nixosModules.sops
+          stylix.nixosModules.stylix
 	  {
 	    environment.systemPackages = with xSettings; [
               pomodoro-cli.packages.${system}.pomodoro-cli
@@ -72,6 +78,7 @@
         };
         modules = [
           ./user/home.nix
+          stylix.homeManagerModules.stylix
           catppuccin.homeManagerModules.catppuccin
           {
             catppuccin.flavor = "mocha";
