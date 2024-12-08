@@ -6,7 +6,7 @@ nixos:
 	sudo nixos-rebuild switch --flake .#nixed0
 
 home:
-	home-manager switch --impure --flake .#uxodb@nixed0
+	home-manager switch --impure --flake .#uxodb
 
 update:
 	sudo nix flake update

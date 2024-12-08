@@ -70,7 +70,7 @@
         ];
       };
 
-      homeConfigurations."uxodb@nixed0" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."uxodb" = home-manager.lib.homeManagerConfiguration {
         pkgs = xpkgs;
         extraSpecialArgs = { 
           inherit inputs; 
