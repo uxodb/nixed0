@@ -9,7 +9,7 @@ home:
 	home-manager switch --impure --flake .#uxodb
 
 update:
-	sudo nix flake update
+	nix flake update
 
 build:
 	@echo "Don't forget to mount volumes!!!"
@@ -18,7 +18,7 @@ build:
 	nixos-install --root /mnt/ --flake .#nixed0
 
 whatif: 
-	sudo nixos-rebuild dry-activate --flake .#nixed0
+	nixos-rebuild dry-activate --flake .#nixed0
 
 test:
 	sudo nixos-rebuild test --flake .#nixed0
