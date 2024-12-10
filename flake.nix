@@ -10,7 +10,13 @@
 
     stylix = {
       url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "pomodoro-cli/flake-utils";
+        flake-compat.follows = "hyprland/pre-commit-hooks/flake-compat";
+        home-manager.follows = "home-manager";
+        systems.follows = "hyprland/systems";
+      };
     };
 
     hyprland = {
@@ -27,9 +33,13 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     pomodoro-cli = {
       url = "github:uxodb/nixed0?dir=user/pkg/pomodoro-cli";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.inputs.systems.follows = "hyprland/systems";
+      };
    };
   };
 
@@ -78,7 +88,7 @@
         };
         modules = [
           ./user/home.nix
-          stylix.homeManagerModules.stylix
+          # stylix.homeManagerModules.stylix
           catppuccin.homeManagerModules.catppuccin
           {
             catppuccin.flavor = "mocha";
