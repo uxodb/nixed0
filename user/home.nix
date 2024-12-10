@@ -34,19 +34,18 @@
       gnumake
       ssh-to-age
       font-awesome
-      nerdfonts
       swww
       plex-desktop
       vesktop
       nautilus
+      hyprgui
+      parsec-bin
+      nix-melt
       nwg-look;
-#      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     };
   };
   
   programs.home-manager.enable = true;
-  fonts.fontconfig.enable = true;
 
+    fonts.fontconfig.enable = true;
 }
-
-

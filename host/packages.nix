@@ -1,13 +1,21 @@
-{ config, pkgs, inputs, xSettings, ... }:
+{ config, pkgs, inputs, xSettings, ... }: {
 
-{
-
-  environment.systemPackages = with pkgs; [
-    sddm-astronaut
-    sops
+  environment.systemPackages = [
+    pkgs.sddm-astronaut
+    pkgs.sops
     #kdePackages.qt5compat
     #(qt6.callPackage ../../nixpkgs/sddmThemes/sddm-astronaut-theme.nix {})
   ];
+
+  fonts.packages = builtins.attrValues {
+    inherit (pkgs.nerd-fonts)
+    fira-code
+    jetbrains-mono
+    fantasque-sans-mono
+    ubuntu-mono
+    ubuntu
+    roboto-mono;
+  };
 
   programs = {
     xwayland.enable = true;
