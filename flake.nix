@@ -15,7 +15,7 @@
         flake-utils.follows = "pomodoro-cli/flake-utils";
         flake-compat.follows = "hyprland/pre-commit-hooks/flake-compat";
         home-manager.follows = "home-manager";
-        systems.follows = "hyprland/systems";
+        systems.follows = "hyprland/systems"; # Needs fix
       };
     };
 
@@ -38,7 +38,7 @@
       url = "github:uxodb/nixed0?dir=user/pkg/pomodoro-cli";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-utils.inputs.systems.follows = "hyprland/systems";
+        flake-utils.inputs.systems.follows = "hyprland/systems"; # Needs Fix
       };
    };
   };
