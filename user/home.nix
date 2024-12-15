@@ -41,6 +41,7 @@
       hyprgui
       parsec-bin
       nix-melt
+      hyprpanel
       nwg-look;
     };
   };

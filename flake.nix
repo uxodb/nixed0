@@ -23,7 +23,12 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -91,6 +96,7 @@
           stylix.homeManagerModules.stylix
           catppuccin.homeManagerModules.catppuccin
           {
+            nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
             catppuccin.flavor = "mocha";
             # catppuccin.pointerCursor.enable = true;
             catppuccin.accent = "peach";
