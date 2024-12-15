@@ -88,15 +88,15 @@
         };
         modules = [
           ./user/home.nix
-          # stylix.homeManagerModules.stylix
+          stylix.homeManagerModules.stylix
           catppuccin.homeManagerModules.catppuccin
           {
             catppuccin.flavor = "mocha";
-            catppuccin.pointerCursor.enable = true;
+            # catppuccin.pointerCursor.enable = true;
             catppuccin.accent = "peach";
-            home.pointerCursor.gtk.enable = true;
-            gtk.catppuccin.enable = true;
-            gtk.enable = true;
+            # home.pointerCursor.gtk.enable = true;
+            # gtk.catppuccin.enable = false;
+            # gtk.enable = false;
           }
         ];
       };

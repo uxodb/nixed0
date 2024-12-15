@@ -4,7 +4,7 @@
 
   imports = [
     ./app
-    # ./pkg
+    ./stylix.nix
   ];
 
   nixpkgs.config = {

@@ -9,9 +9,9 @@ in {
     enable = true;
     systemd.enable = false;
     xwayland.enable = true;
-    catppuccin = {
-      enable = true;
-    };
+    # catppuccin = {
+    #   enable = true;
+    # };
   };
 
   programs.hyprlock.enable = true;
@@ -24,9 +24,6 @@ in {
     "hypr/hyprland.conf" = {
       enable = false;
     };
-    # "hypr/hyprpaper.conf" = {
-    #   enable = false;
-    # };
     "hypr/" = {
       recursive = true;
       source = mkOutOfStoreSymlink "${appConfig}/hypr";
