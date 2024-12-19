@@ -22,8 +22,8 @@
     zsh.enable = true;
     hyprland = {
       enable = true;
-      #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
       #systemd.setPath.enable = "";
 
     };
@@ -56,6 +56,12 @@
     ucodenix = {
       enable = true;
       cpuModelId = "00870F10";
+    };
+    locate = {
+      enable = true;
+      package = pkgs.mlocate;
+      interval = "never";
+      # prunePaths = "";
     };
   };
 }
