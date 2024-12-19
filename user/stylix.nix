@@ -12,7 +12,7 @@
       feh.enable = false;
       firefox.enable = false;
       fuzzel.enable = false;
-      hyprland.enable = false;
+      # hyprland.enable = false;
       hyprlock.enable = false;
       kitty.enable = false;
       waybar.enable = false;
