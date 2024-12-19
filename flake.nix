@@ -24,6 +24,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -93,6 +98,7 @@
         };
         modules = [
           ./user/home.nix
+          inputs.hyprland.homeManagerModules.default
           stylix.homeManagerModules.stylix
           catppuccin.homeManagerModules.catppuccin
           {
