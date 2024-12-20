@@ -7,13 +7,11 @@ in {
 
   programs.feh = {
     enable = true;
-  };
-  xdg.configFile."feh/" = {
-    source = mkOutOfStoreSymlink "${appConfig}/feh";
-  };
-
-  xdg.configFile = {
-    "feh/buttons".enable = false;
-    "feh/keys".enable = false;
+    buttons = {
+      next_img = 4;
+      prev_img = 5;
+      zoom_in = "C-4";
+      zoom_out = "C-5";
+    };
   };
 }
