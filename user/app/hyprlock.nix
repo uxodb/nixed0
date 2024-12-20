@@ -8,7 +8,7 @@ in {
     enable = true;
     settings = {
       # source = "$HOME/.config/hypr/mocha.conf";
-      source = "${appConfig}/hypr/mocha.conf";
+      source = "${inputs.self}/assets/mocha.conf";
       "$accent" = "$mauve";
       "$accentAlpha" = "$mauveAlpha";
       "$font" = "JetBrainsMono Nerd Font";
@@ -58,7 +58,7 @@ in {
       # AVATAR
       image = {
         monitor = "";
-        path = "$HOME/.config/hypr/wallpapers/avatar.png";
+        path = "${inputs.self}/assets/wallpapers/avatar.png";
         size = 100;
         border_color = "$accent";
         position = "0, 75";
