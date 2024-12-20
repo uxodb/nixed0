@@ -2,21 +2,27 @@
 
   stylix = {
     enable = true;
+    autoEnable = true;
     polarity = "dark";
-    image = ./conf/hypr/wallpapers/wp.png;
+    image = ../assets/wallpapers/wp.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    fonts = {
+      sansSerif = {
+        name = "FantasqueSansM Nerd Font";
+        package = pkgs.nerd-fonts.fantasque-sans-mono;
+      };
+      monospace = {
+        name = "FantasqueSansM Nerd Font";
+        package = pkgs.nerd-fonts.fantasque-sans-mono;
+      };
+    };
     targets = {
-      hyprpaper.enable = lib.mkForce false;
+      # hyprpaper.enable = lib.mkForce false;
       neovim.enable = false;
-      swaync.enable = false;
-      feh.enable = false;
       firefox.enable = false;
-      fuzzel.enable = false;
-      # hyprland.enable = false;
       hyprlock.enable = false;
-      kitty.enable = false;
       waybar.enable = false;
     };
   };
-  services.hyprpaper.enable = lib.mkForce false;
+  # services.hyprpaper.enable = lib.mkForce false;
 }
