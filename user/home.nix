@@ -21,7 +21,6 @@
     };
     packages = builtins.attrValues {
       inherit (pkgs)
-      bat
       ripgrep
       eza
       tree
@@ -42,11 +41,13 @@
       parsec-bin
       nix-melt
       hyprpanel
+      nwg-displays
       nwg-look;
     };
   };
-  
-  programs.home-manager.enable = true;
 
-    fonts.fontconfig.enable = true;
+  programs.home-manager.enable = true;
+  fonts.fontconfig.enable = true;
+  xdg.userDirs.createDirectories = true;
+
 }
