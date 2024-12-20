@@ -6,14 +6,6 @@ let
 in {
 
   services.swaync = {
-    enable = true;
-  };
-  xdg.configFile."swaync/" = {
-    source = mkOutOfStoreSymlink "${appConfig}/swaync";
-  };
-
-  xdg.configFile = {
-    "swaync/config.json".enable = false;
-    "swaync/style.css".enable = false;
+    enable = false;
   };
 }
