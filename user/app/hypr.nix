@@ -84,6 +84,11 @@ in {
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
+
+        "$mainMod, S, togglespecialworkspace, magic"
+        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        "$mainMod, mouse_down, workspace, e+1"
+        "$mainMod, mouse_up, workspace, e-1"
       ] ++ (
           builtins.concatLists (builtins.genList (i:
           let ws = i + 1;
@@ -93,6 +98,26 @@ in {
           ])
         9)
       );
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
+      bindel = [
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      ];
+      bindl = [
+        " , XF86AudioNext, exec, playerctl next"
+        " , XF86AudioPause, exec, playerctl play-pause"
+        " , XF86AudioPlay, exec, playerctl play-pause"
+        " , XF86AudioPrev, exec, playerctl previous"
+      ];
+      windowrulev2 = [
+        "suppressevent maximize, class:.*"
+        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+      ];
     };
   };
 }
