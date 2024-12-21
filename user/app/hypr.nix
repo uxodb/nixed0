@@ -11,6 +11,9 @@ in {
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [ 
       inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+      pkgs.hyprlandPlugins.hyprexpo
+      pkgs.hyprlandPlugins.hypr-dynamic-cursors
+      # pkgs.hyprlandPlugins.hyprfocus
     ];
     settings = {
       "$terminal" = "kitty";
