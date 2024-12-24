@@ -1,32 +1,54 @@
-.PHONY: nixos home update clean whatif test rollback build
+$(eval boot:;@:)
+TASK = dry-activate test switch
+FLAKE = nixed0
+PROFILE = uxodb
 
-makeRoot:=$(strip $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))))
+.PHONY: $(TASK)
+$(TASK):
+	sudo nixos-rebuild $@ --flake .#$(FLAKE)
 
-nixos:
-	sudo nixos-rebuild switch --flake .#nixed0
-
+.PHONY: home news
 home:
-	home-manager switch --impure --flake .#uxodb
+ifeq (news, $(filter news,$(MAKECMDGOALS)))
+	@echo "Getting home-manager news"
+else
+	@echo "Switching home-manager profile..."
+endif
+	@home-manager \
+	$(if $(filter news,$(MAKECMDGOALS)), news, switch) \
+	--impure --flake .#$(PROFILE)
+%:
+	@:
 
+.PHONY: update
 update:
 	nix flake update
 
+.PHONY: build
 build:
 	@echo "Don't forget to mount volumes!!!"
 	@echo "Don't forget to mount volumes!!!"
-	@sleep 5
-	nixos-install --root /mnt/ --flake .#nixed0
+	@sleep 2
+	nixos-install --root /mnt/ --flake .#$(FLAKE)
 
-whatif: 
-	nixos-rebuild dry-activate --flake .#nixed0
+.PHONY: optimise
+optimise:
+	sudo nix-store --optimise
 
-test:
-	sudo nixos-rebuild test --flake .#nixed0
-
-rollback:
-	sudo nixos--rebuild --rollback switch
-
-clean:
-	nix-collect-garbage --delete-old
-	sudo nix-collect-garbage --delete-old
+.PHONY: setgen
+setgen:
 	sudo /run/current-system/bin/switch-to-configuration boot
+
+.PHONY: clean boot
+clean:
+ifeq (boot, $(filter boot,$(MAKECMDGOALS)))
+	@echo "Garbage collector: delete old roots"
+	@sleep 1
+	@sudo nix-collect-garbage
+	@sudo nix-collect-garbage --delete-old
+	@sudo nixos-rebuild boot --flake .#$(FLAKE)
+else
+	@echo "Garbage collector: unreferenced packages"
+	@sleep 1
+	@sudo nix-collect-garbage
+endif
