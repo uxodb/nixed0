@@ -11,8 +11,8 @@ in {
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [ 
       inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
-      pkgs.hyprlandPlugins.hyprexpo
-      pkgs.hyprlandPlugins.hypr-dynamic-cursors
+      inputs.dynamicpointer.packages.${pkgs.system}.hypr-dynamic-cursors
+      inputs.hypr-plugins.packages.${pkgs.system}.hyprexpo
       # pkgs.hyprlandPlugins.hyprfocus
     ];
     settings = {

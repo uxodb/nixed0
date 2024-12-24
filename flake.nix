@@ -2,7 +2,7 @@
   description = "nixed0";
 
   inputs = {
- #   nixpkgs-stable.url = "github:NixOS/nixpkgs-24.05";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hardware.url = "github:NixOS/nixos-hardware";
     ucodenix.url = "github:uxodb/ucodenix";
@@ -24,9 +24,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hypr-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     Hyprspace = {
       url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
+    };
+
+    dynamicpointer = {
+      url = "github:VirtCode/hypr-dynamic-cursors";
+      inputs = {
+        hyprland.follows = "hyprland";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
 
     hyprpanel = {

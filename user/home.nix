@@ -42,7 +42,6 @@
       nix-melt
       hyprpanel
       nwg-displays
-      python3Full
       pyprland
       nwg-look;
     };
