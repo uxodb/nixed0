@@ -5,7 +5,6 @@
     ./hardware.nix
     ./packages.nix
     ./sops.nix
-    inputs.ucodenix.nixosModules.default
   ];
   
   #######################

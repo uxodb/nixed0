@@ -12,7 +12,6 @@
       url = "github:danth/stylix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "pomodoro-cli/flake-utils";
         flake-compat.follows = "hyprland/pre-commit-hooks/flake-compat";
         home-manager.follows = "home-manager";
         systems.follows = "hyprland/systems"; # Needs fix
@@ -21,7 +20,6 @@
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hypr-plugins = {
@@ -55,19 +53,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    pomodoro-cli = {
-      url = "github:uxodb/nixed0?dir=user/pkg/pomodoro-cli";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.inputs.systems.follows = "hyprland/systems"; # Needs Fix
-      };
-   };
   };
 
 
   outputs = 
-    { self, nixpkgs, home-manager, hyprland, sops-nix, pomodoro-cli, catppuccin, stylix, ... }@inputs:
+    { self, nixpkgs, home-manager, hyprland, sops-nix, catppuccin, stylix, ... }@inputs:
     let 
       xSettings = {
         system = "x86_64-linux";
@@ -94,11 +84,7 @@
           ./host/configuration.nix
           sops-nix.nixosModules.sops
           stylix.nixosModules.stylix
-	  {
-	    environment.systemPackages = with xSettings; [
-              pomodoro-cli.packages.${system}.pomodoro-cli
-            ];
-	  }
+          inputs.ucodenix.nixosModules.default
         ];
       };
 
@@ -113,15 +99,6 @@
           inputs.hyprland.homeManagerModules.default
           stylix.homeManagerModules.stylix
           catppuccin.homeManagerModules.catppuccin
-          {
-            nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
-            catppuccin.flavor = "mocha";
-            # catppuccin.pointerCursor.enable = true;
-            catppuccin.accent = "peach";
-            # home.pointerCursor.gtk.enable = true;
-            # gtk.catppuccin.enable = false;
-            # gtk.enable = false;
-          }
         ];
       };
     };
