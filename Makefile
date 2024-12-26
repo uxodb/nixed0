@@ -14,6 +14,7 @@ ifeq (news, $(filter news,$(MAKECMDGOALS)))
 else
 	@echo "Switching home-manager profile..."
 endif
+	@sleep 2
 	@home-manager \
 	$(if $(filter news,$(MAKECMDGOALS)), news, switch) \
 	--impure --flake .#$(PROFILE)
