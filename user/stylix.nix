@@ -6,6 +6,11 @@
     polarity = "dark";
     image = ../assets/wallpapers/wp.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    cursor = {
+      package = pkgs.kdePackages.breeze-icons;# pkgs.kdePackages.breeze;
+      name = "breeze_cursors";#Breeze";
+      size = 24;
+    };
     fonts = {
       sizes = {
         desktop = 10;
@@ -19,6 +24,10 @@
       monospace = {
         name = "FantasqueSansM Nerd Font";
         package = pkgs.nerd-fonts.fantasque-sans-mono;
+      };
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
       };
     };
     targets = {
