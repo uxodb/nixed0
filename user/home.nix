@@ -1,22 +1,28 @@
 { config, pkgs, inputs, xSettings, ... }:
-
-{
+let
+   inherit (xSettings) username;
+in {
 
   imports = [
     ./app
     ./stylix.nix
+    ./catppuccin.nix
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnfreePredicate = (_: true);
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+    overlays = [ inputs.hyprpanel.overlay ];
   };
 
-  home = with xSettings; {
+  home = {
     username = username;
     homeDirectory = "/home/${username}";
     stateVersion = "24.05";
     sessionVariables = {
+      NIXOS_OZONE_WL = 1;
       EDITOR = "nvim";
     };
     packages = builtins.attrValues {
