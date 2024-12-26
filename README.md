@@ -22,6 +22,7 @@
 - [https://nixos-and-flakes.thiscute.world/introduction/](https://nixos-and-flakes.thiscute.world/introduction/): nixos and flakes
 - [https://nixos.org/guides/nix-pills/](https://nixos.org/guides/nix-pills/): nix pills
 - [https://zero-to-nix.com](https://zero-to-nix.com): zero to nix
+- [https://ipetkov.dev/blog/tips-and-tricks-for-nix-flakes/](https://ipetkov.dev/blog/tips-and-tricks-for-nix-flakes/): tips and tricks for nix flakes
 - [https://ayats.org/blog/nix-tuto-1](https://ayats.org/blog/nix-tuto-1): the nix lectures
 - [https://vtimofeenko.com/posts/practical-nix-flake-anatomy-a-guided-tour-of-flake.nix/](https://vtimofeenko.com/posts/practical-nix-flake-anatomy-a-guided-tour-of-flake.nix/): practical nix flake anatomy
 - [https://nixos.wiki/wiki/Configuration_Collection](https://nixos.wiki/wiki/Configuration_Collection): nix configuration collection
