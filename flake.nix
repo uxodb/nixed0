@@ -8,18 +8,8 @@
     ucodenix.url = "github:uxodb/ucodenix";
     catppuccin.url = "github:catppuccin/nix";
 
-    stylix = {
-      url = "github:danth/stylix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "hyprland/pre-commit-hooks/flake-compat";
-        home-manager.follows = "home-manager";
-        systems.follows = "hyprland/systems"; # Needs fix
-      };
-    };
-
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "github:hyprwm/Hyprland?rev=e75e2cdac79417ffdbbbe903f72668953483a4e7";#?ref=v0.46.2";
     };
 
     hypr-plugins = {
@@ -35,7 +25,6 @@
       url = "github:VirtCode/hypr-dynamic-cursors";
       inputs = {
         hyprland.follows = "hyprland";
-        nixpkgs.follows = "nixpkgs";
       };
     };
 
@@ -55,9 +44,8 @@
     };
   };
 
-
   outputs = 
-    { self, nixpkgs, home-manager, hyprland, sops-nix, catppuccin, stylix, ... }@inputs:
+    { self, nixpkgs, home-manager, hyprland, sops-nix, catppuccin, ... }@inputs:
     let 
       xSettings = {
         system = "x86_64-linux";
@@ -83,7 +71,6 @@
         modules = [
           ./host/configuration.nix
           sops-nix.nixosModules.sops
-          stylix.nixosModules.stylix
           inputs.ucodenix.nixosModules.default
         ];
       };
@@ -97,7 +84,6 @@
         modules = [
           ./user/home.nix
           inputs.hyprland.homeManagerModules.default
-          stylix.homeManagerModules.stylix
           catppuccin.homeManagerModules.catppuccin
         ];
       };

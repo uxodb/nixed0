@@ -5,7 +5,6 @@ in {
 
   imports = [
     ./app
-    ./stylix.nix
     ./catppuccin.nix
   ];
 
@@ -51,10 +50,26 @@ in {
       pyprland
       nwg-look;
     };
+    pointerCursor = {
+      package = pkgs.vanilla-dmz;
+      name = "Vanilla-DMZ";
+      size = 32;
+      gtk.enable = true;
+    };
   };
 
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      monospace = ["FantasqueSansM Nerd Font"];
+      serif = ["FantasqueSansM Nerd Font"];
+      sansSerif = ["FantasqueSansM Nerd Font"];
+      emoji = ["Noto Color Emoji"];
+    };
+  };
+  gtk.enable = true;
+
   programs.home-manager.enable = true;
-  fonts.fontconfig.enable = true;
   xdg.userDirs.createDirectories = true;
 
 }
