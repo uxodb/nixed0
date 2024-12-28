@@ -1,6 +1,7 @@
 { config, pkgs, inputs, xSettings, ... }:
-
-{
+let
+  inherit (xSettings) locale hostname username;
+in {
   imports = [ 
     ./hardware.nix
     ./packages.nix
@@ -44,25 +45,26 @@
   catppuccin.grub.enable = true;
 
   networking = {
-    hostName = xSettings.hostname;
+    hostName = hostname;
     useNetworkd = true;
     #useDHCP = true;
     interfaces.eth0.useDHCP = true;
   };
 
-  time.timeZone = xSettings.timezone;
+  time.timeZone = timezone;
+  time.hardwareClockInLocalTime = true;
   i18n = {
-    defaultLocale = xSettings.locale;
+    defaultLocale = locale;
     extraLocaleSettings = {
-      LC_ADDRESS = xSettings.locale;
-      LC_IDENTIFICATION = xSettings.locale;
-      LC_MEASUREMENT = xSettings.locale;
-      LC_MONETARY = xSettings.locale;
-      LC_NAME = xSettings.locale;
-      LC_NUMERIC = xSettings.locale;
-      LC_PAPER = xSettings.locale;
-      LC_TELEPHONE = xSettings.locale;
-      LC_TIME = xSettings.locale;
+      LC_ADDRESS = locale;
+      LC_IDENTIFICATION = locale;
+      LC_MEASUREMENT = locale;
+      LC_MONETARY = locale;
+      LC_NAME = locale;
+      LC_NUMERIC = locale;
+      LC_PAPER = locale;
+      LC_TELEPHONE = locale;
+      LC_TIME = locale;
     };
   };
   hardware = {
@@ -80,9 +82,9 @@
   };
 
   users.mutableUsers = false;
-  users.users.${xSettings.username} = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = xSettings.username;
+    description = username;
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     uid = 1000;
