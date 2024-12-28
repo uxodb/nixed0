@@ -24,6 +24,7 @@
 - [https://zero-to-nix.com](https://zero-to-nix.com): zero to nix
 - [https://ipetkov.dev/blog/tips-and-tricks-for-nix-flakes/](https://ipetkov.dev/blog/tips-and-tricks-for-nix-flakes/): tips and tricks for nix flakes
 - [https://ayats.org/blog/nix-tuto-1](https://ayats.org/blog/nix-tuto-1): the nix lectures
+- [https://ayats.org/blog/nix-workflow]https://ayats.org/blog/nix-workflow): the nix development workflow
 - [https://vtimofeenko.com/posts/practical-nix-flake-anatomy-a-guided-tour-of-flake.nix/](https://vtimofeenko.com/posts/practical-nix-flake-anatomy-a-guided-tour-of-flake.nix/): practical nix flake anatomy
 - [https://nixos.wiki/wiki/Configuration_Collection](https://nixos.wiki/wiki/Configuration_Collection): nix configuration collection
 - [https://nixos.org/manual/nixos/unstable/#sec-writing-modules](https://nixos.org/manual/nixos/unstable/#sec-writing-modules): writing nixos modules
