@@ -28,10 +28,20 @@
 
 
   boot.loader = {
-    systemd-boot.enable = true;
-    systemd-boot.configurationLimit = 15;
+    # systemd-boot
+    # systemd-boot.enable = true;
+    # systemd-boot.configurationLimit = 15;
     efi.canTouchEfiVariables = true;
+    # grub
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+    };
   };
+
+  catppuccin.grub.enable = true;
 
   networking = {
     hostName = xSettings.hostname;

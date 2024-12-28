@@ -71,6 +71,7 @@
         modules = [
           ./host/configuration.nix
           sops-nix.nixosModules.sops
+          catppuccin.nixosModules.catppuccin
           inputs.ucodenix.nixosModules.default
         ];
       };
