@@ -9,19 +9,25 @@ in {
     enable = true;
     systemd.enable = lib.mkForce false;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    plugins = [ 
-      inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
-      inputs.dynamicpointer.packages.${pkgs.system}.hypr-dynamic-cursors
-      inputs.hypr-plugins.packages.${pkgs.system}.hyprexpo
-      # pkgs.hyprlandPlugins.hyprfocus
-    ];
+    # plugins = [ 
+    #   inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+    #   inputs.dynamicpointer.packages.${pkgs.system}.hypr-dynamic-cursors
+    #   inputs.hypr-plugins.packages.${pkgs.system}.hyprexpo
+    #   # pkgs.hyprlandPlugins.hyprfocus
+    # ];
     settings = {
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";
       "$menu" = "fuzzel";
+      # env = [
+      #   "QT_QPA_PLATFORMTHEME,qt6ct"
+      #   "XCURSOR_SIZE,24"
+      #   "HYPRCURSOR_SIZE,24"
+      # ];
       exec-once = [
         "$terminal"
-        "waybar"
+        "hyprpaper"
+        "hyprpanel"
       ];
       monitor = [
         # "DP-1, 2560x1440@144, 0x0, 1"
@@ -29,17 +35,42 @@ in {
         "Virtual-1, 1920x1080@60, auto, 1"
       ];
       general = {
-        gaps_in = 2;
-        gaps_out = 5;
+        gaps_in = 3;
+        gaps_out = 8;
         border_size = 2;
+        "col.active_border" = "$mauve $pink 45deg";
+        "col.inactive_border" = "$lavender $sapphire 45deg;";
         # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         # "col.inactive_border" = "rgba(595959aa)";
-        resize_on_border = false;
+        resize_on_border = true;
         allow_tearing = false;
         layout = "dwindle";
       };
+      group = {
+        "col.border_active" = "$mauve $pink 45deg";
+        "col.border_inactive" = "$lavender $sapphire 45deg";
+        "col.border_locked_active" = "$mauve $pink 45deg";
+        "col.border_locked_inactive" = "$lavender $sapphire 45deg";
+      };
       decoration = {
         rounding = 10;
+        # active_opacity = 1.0;
+        inactive_opacity = 0.8;
+        dim_inactive = true;
+        dim_strength = 0.2;
+        dim_special = 0.3;
+        blur = {
+          enabled = true;
+          size = 6;
+          passes = 3;
+          new_optimizations = true;
+          ignore_opacity = true;
+          xray = false;
+          special = true;
+        };
+        shadow = {
+          enabled = false;
+        };
       };
       animations = {
         enabled = true;
@@ -60,6 +91,7 @@ in {
         new_status = "master";
       };
       misc = {
+        # font_family = "";
         force_default_wallpaper = -1;
         disable_hyprland_logo = false;
       };
@@ -71,6 +103,9 @@ in {
         kb_rules = "";
         follow_mouse = 1;
         sensitivity = 0;
+      };
+      cursor = {
+        enable_hyprcursor = false;
       };
       "$mainMod" = "SUPER";
       bind = [
