@@ -7,10 +7,9 @@ menu() {
 	echo "### 1. Create SSH folder             ###"
 	echo "### 2. Create SOPS folder and file   ###"
 	echo "### 3. Copy hardware configuration   ###"
-	echo "### 4. Set SSH remote for git origin ###"
-	echo "### 5. Exit                          ###"
+	echo "### 4. Exit                          ###"
 	echo "######################################"
-	read -p "Choose option [1-5]: " choice
+	read -p "Choose option [1-4]: " choice
 
 	case "$choice" in
             1) if mkdir $HOME/.ssh; then
@@ -30,20 +29,7 @@ menu() {
 	    else
 	    	echo "Hardware config copy failed."
 	    fi;;
-	    4) REPO="/home/uxodb/nixed0"
-	    if [ "$PWD" != "$REPO" ]; then
-	    	cd "$REPO" || { echo "Failed, please cd into $REPO"; exit 1; }
-	    else
-	     	echo "Current remote:"
-	    	git remote -v
-	    	sleep 1;
-	    	echo -e "\nSetting new remote..."
-	    	git remote set-url origin git@github.com:uxodb/nixed0.git
-	    	sleep 1;
-	    	echo -e "\nRemote set:"
-	    	git remote -v
-	    fi;;
-	    5) echo "Exiting menu"
+	    4) echo "Exiting menu"
 	    break;;
 	    *) echo "Invalid [1-5]";;
 	esac

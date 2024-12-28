@@ -11,15 +11,16 @@ pkgs.mkShellNoCC {
 
   packages = builtins.attrValues {
     inherit (pkgs)
-    cmake
+    just
     git
     sops
+    bitwarden-cli
     home-manager;
   };
 
   shellHook = ''
     echo "##############################################################"
-    echo "#### Entered shell with cmake, git, sops and home-manager ####"
+    echo "#### Entered shell with just, git, sops and home-manager ####"
     echo "#### --                                                   ####"
     echo "#### \"menu\" to enter menu                                 ####"
     echo "##############################################################"
