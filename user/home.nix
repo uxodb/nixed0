@@ -48,6 +48,7 @@ in {
       hyprpanel
       nwg-displays
       pyprland
+      waypaper
       nwg-look;
     };
     pointerCursor = {
