@@ -3,6 +3,7 @@
   environment.systemPackages = [
     pkgs.sddm-astronaut
     pkgs.sops
+    pkgs.just
     #kdePackages.qt5compat
     #(qt6.callPackage ../../nixpkgs/sddmThemes/sddm-astronaut-theme.nix {})
   ];
