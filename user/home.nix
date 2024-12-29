@@ -13,8 +13,14 @@ in {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
     };
-    overlays = [ inputs.hyprpanel.overlay ];
+    overlays = [ 
+      inputs.hyprpanel.overlay 
+      (import ../overlay/manix.nix)
+    ];
   };
+
+  # for manix overlay
+  manual.json.enable = true;
 
   home = {
     username = username;
@@ -42,13 +48,14 @@ in {
       plex-desktop
       vesktop
       nautilus
-      hyprgui
       parsec-bin
       nix-melt
       hyprpanel
       nwg-displays
       pyprland
       waypaper
+      nix-health
+      manix
       nwg-look;
     };
     pointerCursor = {
