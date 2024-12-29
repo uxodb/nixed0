@@ -4,9 +4,11 @@
   inputs = {
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.follows = "hyprland/nixpkgs";
     hardware.url = "github:NixOS/nixos-hardware";
     ucodenix.url = "github:uxodb/ucodenix";
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix?ref=v1.2.1";
+    ghostty.url = "github:ghostty-org/ghostty";
 
     hyprland = {
       url = "github:hyprwm/Hyprland?rev=e75e2cdac79417ffdbbbe903f72668953483a4e7";#?ref=v0.46.2";
@@ -29,7 +31,7 @@
     };
 
     hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
+      url = "github:Jas-SinghFSU/HyprPanel?ref=pull/633/head";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -73,6 +75,11 @@
           sops-nix.nixosModules.sops
           catppuccin.nixosModules.catppuccin
           inputs.ucodenix.nixosModules.default
+          {
+            environment.systemPackages = [
+              inputs.ghostty.packages.${xSettings.system}.default
+            ];
+          }
         ];
       };
 
