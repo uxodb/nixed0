@@ -104,12 +104,46 @@ setboot:
 ########
 ##PREP##
 ########
-[doc("Set ssh remote for the repo")]
-git:
+[doc("Prepares and builds the config on a fresh system")]
+build: && _bwlogin _sops _generate-hardware _gitremote _bwlogout
+  just warn "Starting build sequence in 3 seconds..."
+  sleep 3
+
+_sops:
+  #!/usr/bin/env bash
+  just info "Creating ssh folder in $HOME"
+  mkdir $HOME/.ssh
+  ls -la $HOME/.ssh
+  keyFile=$HOME/.config/sops/age/keys.txt
+  just info "Preparing folder in .config for key."
+  mkdir -p $HOME/.config/sops/age
+  ls -la $HOME/.config/sops/age
+  bw list items --search SOPS | jq -r '.[].notes' > $keyFile
+  just info "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
+  ls -la $HOME/.config/sops/age/keys.txt
+  cat $HOME/.config/sops/age/keys.txt
+
+_bwlogin:
+  just warn "Login to bitwarden when prompted, keep 2FA ready."
+  export BW_SESSION=$(bw login | grep 'export BW_SESSION' | awk -F '"' '{print $2}')
+  just info "BW_SESSION exported."
+  just info $BW_SESSION
+
+_bwlogout:
+  just warn "Logging out of Bitwarden-cli"
+  bw logout
+  bw lock
+
+_generate-hardware:
+  just info "Generating hardware config and overwriting old..."
+  nixos-generate-config --show-hardware-config > $HOME/nixed0/host/hardware.nix
+  ls -la $HOME/nixed0/host/hardware.nix
+
+_gitremote:
   #!/usr/bin/env bash
   if [[ "$PWD" != "~/nixed0" ]]; then
     just warn "PWD is not repo, moving into repo"
-    cd ~/nixed0/
+    cd $HOME/nixed0/
   fi
   just info "Current remote:"
   git remote -v
@@ -118,8 +152,7 @@ git:
   just info "Remote set"
   git remote -v
 
-[doc("NixOS install in /mnt/")]
-build:
+_install:
   just warn "do not forget mounts"
   just warn "do not forget mounts"
   sleep 3

@@ -1,28 +1,26 @@
 { pkgs, xSettings }:
 
-let
-  buildmenu = pkgs.writeShellScriptBin "menu"
-    (builtins.readFile ./build.sh);
-in 
-
 pkgs.mkShellNoCC {
-
-  depsBuildBuild = [ buildmenu ];
 
   packages = builtins.attrValues {
     inherit (pkgs)
     just
     git
+    jq
     sops
     bitwarden-cli
     home-manager;
   };
 
   shellHook = ''
-    echo "##############################################################"
-    echo "#### Entered shell with just, git, sops and home-manager ####"
-    echo "#### --                                                   ####"
-    echo "#### \"menu\" to enter menu                                 ####"
-    echo "##############################################################"
+    echo "################################################################################"
+    echo "################################################################################"
+    echo "################################################################################"
+    echo "#### Entered shell with just, jq, git, sops, home-manager and bitwarden-cli ####"
+    echo "#### --                                                                     ####"
+    echo "#### Run 'just build' to start building the configuration                   ####"
+    echo "################################################################################"
+    echo "################################################################################"
+    echo "################################################################################"
   '';
 }
