@@ -12,4 +12,6 @@
     gtk.enable = true;
     gtk.icon.enable = true;
   };
+  # programs.rofi.theme = (config.scheme inputs.base16-rofi);
+
 }

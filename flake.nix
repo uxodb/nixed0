@@ -2,13 +2,13 @@
   description = "nixed0";
 
   inputs = {
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.follows = "hyprland/nixpkgs";
     hardware.url = "github:NixOS/nixos-hardware";
     ucodenix.url = "github:uxodb/ucodenix";
     catppuccin.url = "github:catppuccin/nix?ref=v1.2.1";
     ghostty.url = "github:ghostty-org/ghostty";
+    base16.url = "github:SenchoPens/base16.nix";
 
     hyprland = {
       url = "github:hyprwm/Hyprland?rev=e75e2cdac79417ffdbbbe903f72668953483a4e7";#?ref=v0.46.2";
@@ -25,9 +25,7 @@
 
     dynamicpointer = {
       url = "github:VirtCode/hypr-dynamic-cursors";
-      inputs = {
-        hyprland.follows = "hyprland";
-      };
+      inputs.hyprland.follows = "hyprland";
     };
 
     hyprpanel = {
@@ -44,6 +42,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    tt-schemes = {
+      url = "github:tinted-theming/schemes";
+      flake = false;
+    };
   };
 
   outputs = 
@@ -55,7 +58,8 @@
         locale = "en_US.UTF-8";
         username = "uxodb";
         hostname = "nixed0";
-        appConfig = "/home/uxodb/nixed0/user/conf";
+        appConfig = "${inputs.self}/user/conf";
+        theme = "catppuccin-mocha";
       };
       xpkgs = nixpkgs.legacyPackages.${xSettings.system};
     in
@@ -91,8 +95,10 @@
         };
         modules = [
           ./user/home.nix
+          inputs.base16.nixosModule
           inputs.hyprland.homeManagerModules.default
           catppuccin.homeManagerModules.catppuccin
+          {scheme = "${inputs.tt-schemes}/base16/${xSettings.theme}.yaml";}
         ];
       };
     };

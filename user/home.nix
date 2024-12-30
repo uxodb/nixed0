@@ -5,7 +5,7 @@ in {
 
   imports = [
     ./app
-    ./catppuccin.nix
+    ./theming.nix
   ];
 
   nixpkgs = {
