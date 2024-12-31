@@ -38,9 +38,6 @@ in {
       inherit (pkgs)
       tree
       jq
-      fd
-      fzf
-      wget
       curl
       nix-search-cli
       gnumake
