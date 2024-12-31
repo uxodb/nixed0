@@ -47,6 +47,11 @@
       url = "github:tinted-theming/schemes";
       flake = false;
     };
+
+    json2nix = {
+      url = "github:sempruijs/json2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = 
@@ -82,6 +87,7 @@
           {
             environment.systemPackages = [
               inputs.ghostty.packages.${xSettings.system}.default
+              inputs.json2nix.packages.${xSettings.system}.default
             ];
           }
         ];
