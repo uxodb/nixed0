@@ -1,6 +1,6 @@
 { config, pkgs, inputs, xSettings, ... }:
 let
-  inherit (xSettings) locale hostname username;
+  inherit (xSettings) locale hostname username timezone;
 in {
   imports = [ 
     ./hardware.nix
@@ -92,5 +92,4 @@ in {
   };
 
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
