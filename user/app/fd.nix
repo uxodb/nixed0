@@ -4,7 +4,7 @@
     enable = true;
     extraOptions = [
       "--one-file-system"
-      "--color always"
+      "--color=always"
       "--exclude .git"
       "--list-details"
       "--no-require-git"

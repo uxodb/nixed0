@@ -9,6 +9,8 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       # eza.nix
+      # fzf.nix
+      # fd.nix
     };
     initExtra = ''
       fastfetch
