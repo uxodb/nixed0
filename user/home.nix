@@ -32,8 +32,6 @@ in {
     };
     packages = builtins.attrValues {
       inherit (pkgs)
-      ripgrep
-      eza
       tree
       jq
       fd
@@ -56,6 +54,7 @@ in {
       waypaper
       nix-health
       manix
+      google-chrome
       nwg-look;
     };
     pointerCursor = {
