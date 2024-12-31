@@ -35,7 +35,7 @@ in {
         "Virtual-1, 1920x1080@60, auto, 1"
       ];
       general = {
-        gaps_in = 3;
+        gaps_in = 4;
         gaps_out = 8;
         border_size = 2;
         "col.active_border" = "$mauve $pink 45deg";
