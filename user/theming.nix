@@ -21,7 +21,7 @@ in {
   # programs.rofi.theme = "${xSettings.appConfig}/rofi/style_3.rasi";
 
   # eza
-  xdg.configFile."eza/catppuccin.yml" = {
+  xdg.configFile."eza/theme.yml" = {
     source = "${appConfig}/eza/catppuccin.yml";
   };
 }
