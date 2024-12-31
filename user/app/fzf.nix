@@ -9,7 +9,6 @@
 
   ## Aliases
   programs.zsh.shellAliases = {
-    find = "fzf";
     fzf = "nvim $(fzf)";
   };
 }
