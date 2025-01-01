@@ -5,7 +5,7 @@
     extraOptions = [
       "--one-file-system"
       "--color=always"
-      "--exclude .git"
+      "--exclude '.git'"
       "--list-details"
       "--no-require-git"
       "--hidden"
