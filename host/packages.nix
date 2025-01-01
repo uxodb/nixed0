@@ -19,6 +19,7 @@
     ubuntu
     roboto-mono;
     inherit (pkgs)
+    font-awesome
     noto-fonts-emoji;
   };
 

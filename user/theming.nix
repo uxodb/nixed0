@@ -4,6 +4,28 @@ let
   inherit (xSettings) appConfig;
 in {
 
+  home.pointerCursor = {
+    package = pkgs.lyra-cursors;
+    # package = pkgs.rose-pine-cursor;
+    # $out/share/icons/${cfg.name}
+    # name = "BreezeX-RosePine-Linux";
+    # F=peach B=blue G=orange P=purple/blue Q=blue/purple(light)
+    # R=pink/purple S=red X=green Y=slimegreen
+    name = "LyraF-cursors";
+    size = 32;
+    gtk.enable = true;
+  };
+
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      monospace = ["FantasqueSansM Nerd Font"];
+      serif = ["FantasqueSansM Nerd Font"];
+      sansSerif = ["FantasqueSansM Nerd Font"];
+      emoji = ["Noto Color Emoji"];
+    };
+  };
+
   catppuccin = {
     flavor = "mocha";
     accent = "pink";
