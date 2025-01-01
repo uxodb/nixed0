@@ -1,4 +1,4 @@
-{configs, pkgs, inputs, xSettings, ...} {
+{configs, pkgs, inputs, xSettings, ...}: {
 
   programs.hyprland = {
     enable = true;
