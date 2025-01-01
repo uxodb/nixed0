@@ -3,6 +3,7 @@ let
   inherit (xSettings) locale hostname username timezone;
 in {
   imports = [ 
+    ./programs
     ./hardware.nix
     ./packages.nix
     ./sops.nix
