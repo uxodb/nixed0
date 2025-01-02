@@ -13,12 +13,18 @@
   fonts.packages = builtins.attrValues {
     inherit (pkgs.nerd-fonts)
     fira-code
+    fira-mono
     jetbrains-mono
     fantasque-sans-mono
     ubuntu-mono
     ubuntu
+    _0xproto
+    hack
+    inconsolata
     roboto-mono;
     inherit (pkgs)
+    corefonts
+    vistafonts
     font-awesome
     noto-fonts-emoji;
   };
