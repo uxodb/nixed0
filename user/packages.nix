@@ -8,6 +8,9 @@
           json2nix;
         };
       nixPackages = {
+        inherit (pkgs.kdePackages)
+        okular
+        qtstyleplugin-kvantum;
         inherit (pkgs)
         tree
         jq
@@ -29,6 +32,14 @@
         google-chrome
         gnome-calendar
         gnome-clocks
+        # veracrypt
+        # qbittorrent
+        mpc-qt
+        # seafile-client
+        protonvpn-gui
+        protonmail-desktop
+        whatsapp-for-linux
+        p7zip
         nwg-look;
       };
     in 
