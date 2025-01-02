@@ -9,7 +9,7 @@ in {
     enable = true;
     sensibleOnTop = true;
     plugins = [
-      pkgs.tmuxPlugins.sensible
+      # pkgs.tmuxPlugins.sensible
       pkgs.tmuxPlugins.resurrect
       {
         plugin = pkgs.tmuxPlugins.catppuccin;
