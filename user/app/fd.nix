@@ -2,10 +2,10 @@
 
   programs.fd = {
     enable = true;
+    ignores = [".git/"];
     extraOptions = [
       "--one-file-system"
       "--color=always"
-      "--exclude '.git'"
       "--list-details"
       "--no-require-git"
       "--hidden"
