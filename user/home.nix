@@ -32,7 +32,6 @@ in {
     };
   };
 
-  gtk.enable = true;
   programs.home-manager.enable = true;
   xdg.userDirs.createDirectories = true;
 
