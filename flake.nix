@@ -22,40 +22,37 @@
       url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
     };
-
     dynamicpointer = {
       url = "github:VirtCode/hypr-dynamic-cursors";
       inputs.hyprland.follows = "hyprland";
     };
-
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel?ref=pull/633/head";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     tt-schemes = {
       url = "github:tinted-theming/schemes";
       flake = false;
     };
-
     json2nix = {
       url = "github:sempruijs/json2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    solaar = {
+      url = "github:Svenum/Solaar-Flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = 
-    { self, nixpkgs, home-manager, hyprland, sops-nix, catppuccin, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
     let 
       xSettings = {
         system = "x86_64-linux";
@@ -81,13 +78,13 @@
         };
         modules = [
           ./host/configuration.nix
-          sops-nix.nixosModules.sops
-          catppuccin.nixosModules.catppuccin
+          inputs.sops-nix.nixosModules.sops
+          inputs.catppuccin.nixosModules.catppuccin
           inputs.ucodenix.nixosModules.default
+          inputs.solaar.nixosModules.default
           {
             environment.systemPackages = [
               inputs.ghostty.packages.${xSettings.system}.default
-              inputs.json2nix.packages.${xSettings.system}.default
             ];
           }
         ];
@@ -103,7 +100,7 @@
           ./user/home.nix
           inputs.base16.nixosModule
           inputs.hyprland.homeManagerModules.default
-          catppuccin.homeManagerModules.catppuccin
+          inputs.catppuccin.homeManagerModules.catppuccin
           {scheme = "${inputs.tt-schemes}/base16/${xSettings.theme}.yaml";}
         ];
       };
