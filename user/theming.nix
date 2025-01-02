@@ -4,6 +4,13 @@ let
   inherit (xSettings) appConfig;
 in {
 
+  gtk.enable = true;
+  qt = {
+    enable = true;
+    style.name = "kvantum";
+    platformTheme.name = "kvantum";
+  };
+
   home.pointerCursor = {
     package = pkgs.lyra-cursors;
     # package = pkgs.rose-pine-cursor;
@@ -37,6 +44,7 @@ in {
     fzf.enable = true;
     gtk.enable = true;
     gtk.icon.enable = true;
+    kvantum.enable = true;
   };
 
   # programs.rofi.theme = (config.scheme inputs.base16-rofi);
