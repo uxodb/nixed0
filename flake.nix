@@ -9,11 +9,9 @@
     catppuccin.url = "github:catppuccin/nix?ref=v1.2.1";
     ghostty.url = "github:ghostty-org/ghostty";
     base16.url = "github:SenchoPens/base16.nix";
-
     hyprland = {
       url = "github:hyprwm/Hyprland?rev=e75e2cdac79417ffdbbbe903f72668953483a4e7";#?ref=v0.46.2";
     };
-
     hypr-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
