@@ -33,6 +33,21 @@ in {
   };
 
   programs.home-manager.enable = true;
-  xdg.userDirs.createDirectories = true;
-
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    desktop = null;
+    music = null;
+    publicShare = null;
+    templates = null;
+    documents = "${config.home.homeDirectory}/documents";
+    download = "${config.home.homeDirectory}/downloads";
+    pictures = "${config.home.homeDirectory}/pictures";
+    videos = "${config.home.homeDirectory}/videos";
+    extraConfig = {
+      XDG_PROJECTS_DIR = "${config.home.homeDirectory}/projects";
+      XDG_GAMES_DIR = "${config.home.homeDirectory}/games";
+      XDG_MISC_DIR = "${config.home.homeDirectory}/miscellaneous";
+    };
+  };
 }
