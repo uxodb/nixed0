@@ -40,6 +40,7 @@
         protonmail-desktop
         whatsapp-for-linux
         p7zip
+        wl-clipboard
         nwg-look;
       };
     in 
