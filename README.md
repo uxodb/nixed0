@@ -29,3 +29,4 @@
 - [https://wiki.nixos.org/wiki/Overlays](https://wiki.nixos.org/wiki/Overlays): using overlays and examples
 - [https://nixos.wiki/wiki/Configuration_Collection](https://nixos.wiki/wiki/Configuration_Collection): nix configuration collection
 - [https://nixos.org/manual/nixos/unstable/#sec-writing-modules](https://nixos.org/manual/nixos/unstable/#sec-writing-modules): writing nixos modules
+- [https://github.com/mikeroyal/NixOS-Guide](https://github.com/mikeroyal/NixOS-Guide): nixos guide
