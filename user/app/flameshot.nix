@@ -2,6 +2,7 @@
 
 let
   inherit (xSettings) appConfig;
+  inherit (config.home) homeDirectory;
 in {
 
   services.flameshot = {
@@ -9,7 +10,13 @@ in {
     package = pkgs.flameshot.override {
       enableWlrSupport = true;
     };
-    # settings = "";
+    settings = {
+      General = {
+        filenamePattern = "%j%V-%e%m%Y-%H%M";
+        savePath = "${homeDirectory}/Pictures/Screenshots";
+        savePathFixed = false;
+      };
+    };
   };
 
 }
