@@ -40,14 +40,14 @@ in {
     music = null;
     publicShare = null;
     templates = null;
-    documents = "${config.home.homeDirectory}/documents";
-    download = "${config.home.homeDirectory}/downloads";
-    pictures = "${config.home.homeDirectory}/pictures";
-    videos = "${config.home.homeDirectory}/videos";
+    documents = "${config.home.homeDirectory}/Documents";
+    download = "${config.home.homeDirectory}/Downloads";
+    pictures = "${config.home.homeDirectory}/Pictures";
+    videos = "${config.home.homeDirectory}/Videos";
     extraConfig = {
-      XDG_PROJECTS_DIR = "${config.home.homeDirectory}/projects";
-      XDG_GAMES_DIR = "${config.home.homeDirectory}/games";
-      XDG_MISC_DIR = "${config.home.homeDirectory}/miscellaneous";
+      XDG_PROJECTS_DIR = "${config.home.homeDirectory}/Projects";
+      XDG_GAMES_DIR = "${config.home.homeDirectory}/Games";
+      XDG_MISC_DIR = "${config.home.homeDirectory}/Miscellaneous";
     };
   };
 }
