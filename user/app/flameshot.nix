@@ -15,6 +15,7 @@ in {
         filenamePattern = "%j%V-%e%m%Y-%H%M";
         savePath = "${homeDirectory}/Pictures/Screenshots";
         savePathFixed = false;
+        disabledGrimWarning = true;
       };
     };
   };
