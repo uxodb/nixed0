@@ -9,6 +9,10 @@
     catppuccin.url = "github:catppuccin/nix?ref=v1.2.1";
     ghostty.url = "github:ghostty-org/ghostty";
     base16.url = "github:SenchoPens/base16.nix";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland = {
       url = "github:hyprwm/Hyprland?rev=e75e2cdac79417ffdbbbe903f72668953483a4e7";#?ref=v0.46.2";
     };
@@ -24,12 +28,12 @@
       url = "github:VirtCode/hypr-dynamic-cursors";
       inputs.hyprland.follows = "hyprland";
     };
+    Hyprchroma = {
+      url = "github:alexhulbert/Hyprchroma";
+      # inputs.hyprland.follows = "hyprland";
+    };
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel?ref=pull/633/head";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {

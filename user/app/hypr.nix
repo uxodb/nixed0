@@ -9,12 +9,13 @@ in {
     enable = true;
     systemd.enable = lib.mkForce false;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    # plugins = [ 
+    plugins = [ 
     #   inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     #   inputs.dynamicpointer.packages.${pkgs.system}.hypr-dynamic-cursors
     #   inputs.hypr-plugins.packages.${pkgs.system}.hyprexpo
     #   # pkgs.hyprlandPlugins.hyprfocus
-    # ];
+      inputs.Hyprchroma.packages.${pkgs.system}.Hypr-DarkWindow
+    ];
     settings = {
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";
@@ -54,16 +55,17 @@ in {
       };
       decoration = {
         rounding = 10;
-        # active_opacity = 1.0;
+        active_opacity = 1.0;
         inactive_opacity = 0.8;
-        dim_inactive = true;
-        dim_strength = 0.2;
-        dim_special = 0.3;
+        # dim_inactive = true;
+        # dim_strength = 0.2;
+        # dim_special = 0.3;
         blur = {
           enabled = true;
-          size = 6;
-          passes = 3;
+          size = 10;
+          passes = 2;
           new_optimizations = true;
+          popups = true;
           ignore_opacity = true;
           xray = false;
           special = true;
@@ -155,7 +157,9 @@ in {
       windowrulev2 = [
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "plugin:chromakey,fullscreen:0"
       ];
+      chromakey_background = "7,8,17";
     };
   };
 }
