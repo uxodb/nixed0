@@ -74,6 +74,10 @@ in {
   hardware = {
     ckb-next.enable = true;
     amdgpu.amdvlk.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
   xdg.portal = {
     enable = true;
