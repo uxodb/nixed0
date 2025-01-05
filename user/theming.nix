@@ -18,7 +18,7 @@ in {
     # name = "BreezeX-RosePine-Linux";
     # F=peach B=blue G=orange P=purple/blue Q=blue/purple(light)
     # R=pink/purple S=red X=green Y=slimegreen
-    name = "LyraF-cursors";
+    name = "LyraX-cursors";
     size = 32;
     gtk.enable = true;
   };
