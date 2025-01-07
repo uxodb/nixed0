@@ -1,4 +1,4 @@
-{ config,  inputs, xSettings, ... }: {
+{ config, pkgs, inputs, xSettings, ... }: {
 
   environment.systemPackages = builtins.attrValues {
     inherit (pkgs)
