@@ -11,7 +11,13 @@
     tree
     ssh-to-age
     unzip
-    unrar;
+    unrar
+    nix-health
+    nix-melt
+    nix-search-cli
+    manix
+    nurl
+    nh;
   };
 
   # Failed to load/create freetype error
