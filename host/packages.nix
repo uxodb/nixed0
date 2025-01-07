@@ -4,6 +4,12 @@
     pkgs.sddm-astronaut
     pkgs.sops
     pkgs.just
+    pkgs.wget
+    pkgs.jq
+    pkgs.curl
+    pkgs.tree
+    pkgs.ssh-to-age
+    pkgs.unzip
     #kdePackages.qt5compat
     #(qt6.callPackage ../../nixpkgs/sddmThemes/sddm-astronaut-theme.nix {})
   ];

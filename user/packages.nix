@@ -12,11 +12,7 @@
         okular
         qtstyleplugin-kvantum;
         inherit (pkgs)
-        tree
-        jq
-        curl
         nix-search-cli
-        ssh-to-age
         swww
         plex-desktop
         vesktop
@@ -41,6 +37,9 @@
         whatsapp-for-linux
         p7zip
         wl-clipboard
+        matugen
+        nurl
+        obs-studio
         nwg-look;
       };
     in 
