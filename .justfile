@@ -5,9 +5,8 @@ PATH := "~/nixed0"
 FLAKE := "nixed0"
 PROFILE := "uxodb"
 
-#recipe +PARAM="":
-#  just info "{{PARAM}}"
-#  run {{PARAM}}
+#sudo nixos-rebuild switch --flake {{PATH}}#{{FLAKE}}
+#home-manager switch --impure --flake {{PATH}}#{{PROFILE}}
 
 [doc('Show this list')]
 help *args="":
@@ -33,16 +32,16 @@ switch option="home":
   case "{{option}}" in
     "nixos")
       just warn "Switching NixOS configuration..."
-      sudo nixos-rebuild switch --flake {{PATH}}#{{FLAKE}}
+      nh os switch ~/nixed0
       ;;
     "home")
       just warn "Switching home-manager configuration..."
-      home-manager switch --impure --flake {{PATH}}#{{PROFILE}}
+      nh home switch ~/nixed0 -- --impure
       ;;
     "all")
       just warn "Switching both NixOS and HM configurations..."
-      home-manager switch --impure --flake {{PATH}}#{{PROFILE}}
-      sudo nixos-rebuild switch --flake {{PATH}}#{{FLAKE}}
+      nh os switch ~/nixed0
+      nh home switch ~/nixed0 -- --impure
       ;;
     *)
       just error "Invalid option: {{option}}"
