@@ -30,3 +30,6 @@
 - [https://nixos.wiki/wiki/Configuration_Collection](https://nixos.wiki/wiki/Configuration_Collection): nix configuration collection
 - [https://nixos.org/manual/nixos/unstable/#sec-writing-modules](https://nixos.org/manual/nixos/unstable/#sec-writing-modules): writing nixos modules
 - [https://github.com/mikeroyal/NixOS-Guide](https://github.com/mikeroyal/NixOS-Guide): nixos guide
+
+#### Awesome Nix
+[https://github.com/nix-community/awesome-nix](https://github.com/nix-community/awesome-nix)
