@@ -1,18 +1,18 @@
-{ config, pkgs, inputs, xSettings, ... }: {
+{ config,  inputs, xSettings, ... }: {
 
-  environment.systemPackages = [
-    pkgs.sddm-astronaut
-    pkgs.sops
-    pkgs.just
-    pkgs.wget
-    pkgs.jq
-    pkgs.curl
-    pkgs.tree
-    pkgs.ssh-to-age
-    pkgs.unzip
-    #kdePackages.qt5compat
-    #(qt6.callPackage ../../nixpkgs/sddmThemes/sddm-astronaut-theme.nix {})
-  ];
+  environment.systemPackages = builtins.attrValues {
+    inherit (pkgs)
+    sddm-astronaut
+    sops
+    just
+    wget
+    jq
+    curl
+    tree
+    ssh-to-age
+    unzip
+    unrar;
+  };
 
   # Failed to load/create freetype error
   # fc-cache -r
