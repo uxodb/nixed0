@@ -34,6 +34,9 @@
         p7zip
         wl-clipboard
         obs-studio
+        wl-screenrec
+        wf-recorder
+        slurp
         nwg-look;
       };
     in 
