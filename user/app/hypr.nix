@@ -20,15 +20,14 @@ in {
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";
       "$menu" = "fuzzel";
-      # env = [
-      #   "QT_QPA_PLATFORMTHEME,qt6ct"
-      #   "XCURSOR_SIZE,24"
-      #   "HYPRCURSOR_SIZE,24"
-      # ];
+      "$screenshot" = "flameshot gui";
+      "$screencast" = 'wl-screenrec -g "$(slurp)"';
       exec-once = [
         "$terminal"
         "hyprpaper"
         "hyprpanel"
+        "pypr"
+        "flameshot"
       ];
       monitor = [
         # "DP-1, 2560x1440@144, 0x0, 1"
@@ -39,8 +38,8 @@ in {
         gaps_in = 4;
         gaps_out = 8;
         border_size = 2;
-        "col.active_border" = "$mauve $pink 45deg";
-        "col.inactive_border" = "$lavender $sapphire 45deg;";
+        "col.active_border" = "$peach $mauve 45deg";
+        "col.inactive_border" = "$lavender $green 45deg;";
         # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         # "col.inactive_border" = "rgba(595959aa)";
         resize_on_border = true;
@@ -48,10 +47,10 @@ in {
         layout = "dwindle";
       };
       group = {
-        "col.border_active" = "$mauve $pink 45deg";
-        "col.border_inactive" = "$lavender $sapphire 45deg";
-        "col.border_locked_active" = "$mauve $pink 45deg";
-        "col.border_locked_inactive" = "$lavender $sapphire 45deg";
+        "col.border_active" = "$peach $mauve 45deg";
+        "col.border_inactive" = "$lavender $green 45deg";
+        "col.border_locked_active" = "$peach $mauve 45deg";
+        "col.border_locked_inactive" = "$lavender $green 45deg";
       };
       decoration = {
         rounding = 10;
@@ -111,6 +110,7 @@ in {
       };
       "$mainMod" = "SUPER";
       bind = [
+        "Alt_L, grave, exec, $screenshot"
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
