@@ -19,7 +19,6 @@
         parsec-bin
         hyprpanel
         nwg-displays
-        pyprland
         waypaper
         google-chrome
         gnome-calendar
