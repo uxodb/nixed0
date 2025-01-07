@@ -8,7 +8,7 @@
     ucodenix.url = "github:uxodb/ucodenix";
     catppuccin.url = "github:catppuccin/nix?ref=v1.2.1";
     ghostty.url = "github:ghostty-org/ghostty";
-    base16.url = "github:SenchoPens/base16.nix";
+    nix-colors.url = "github:misterio77/nix-colors";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,10 +39,6 @@
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    tt-schemes = {
-      url = "github:tinted-theming/schemes";
-      flake = false;
     };
     json2nix = {
       url = "github:sempruijs/json2nix";
@@ -100,10 +96,9 @@
         };
         modules = [
           ./user/home.nix
-          inputs.base16.nixosModule
           inputs.hyprland.homeManagerModules.default
           inputs.catppuccin.homeManagerModules.catppuccin
-          {scheme = "${inputs.tt-schemes}/base16/${xSettings.theme}.yaml";}
+          inputs.nix-colors.homeManagerModules.default
         ];
       };
     };
