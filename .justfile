@@ -104,7 +104,7 @@ setboot:
 ##PREP##
 ########
 [doc("Prepares and builds the config on a fresh system")]
-build: && _bwlogin _sops _generate-hardware _gitremote _bwlogout
+build: && _main _sops _generate-hardware _gitremote _bwlogout
   just warn "Starting build sequence in 3 seconds..."
   sleep 3
 
@@ -120,13 +120,12 @@ _sops:
   bw list items --search SOPS | jq -r '.[].notes' > $keyFile
   just info "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
   ls -la $HOME/.config/sops/age/keys.txt
-  cat $HOME/.config/sops/age/keys.txt
+  just info "$(cat $HOME/.config/sops/age/keys.txt)
 
-_bwlogin:
+_main:
   just warn "Login to bitwarden when prompted, keep 2FA ready."
-  export BW_SESSION=$(bw login | grep 'export BW_SESSION' | awk -F '"' '{print $2}')
-  just info "BW_SESSION exported."
-  just info $BW_SESSION
+  export BW_SESSION=$(bw login | grep 'export BW_SESSION' | awk -F '"' '{print $2}') \
+  && just info "Exported var: $BW_SESSION" && just _sops
 
 _bwlogout:
   just warn "Logging out of Bitwarden-cli"
