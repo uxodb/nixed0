@@ -120,7 +120,7 @@ _sops:
   bw list items --search SOPS | jq -r '.[].notes' > $keyFile
   just info "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
   ls -la $HOME/.config/sops/age/keys.txt
-  just info "$(cat $HOME/.config/sops/age/keys.txt)
+  just info "$(cat $HOME/.config/sops/age/keys.txt)"
 
 _main:
   just warn "Login to bitwarden when prompted, keep 2FA ready."
