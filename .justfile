@@ -104,7 +104,7 @@ setboot:
 ##PREP##
 ########
 [doc("Prepares and builds the config on a fresh system")]
-build: && _main _sops _generate-hardware _gitremote _bwlogout
+build: && _main _generate-hardware _gitremote _bwlogout
   just warn "Starting build sequence in 3 seconds..."
   sleep 3
 
