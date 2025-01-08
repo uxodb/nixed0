@@ -112,14 +112,14 @@ _sops:
   #!/usr/bin/env bash
   just info "Creating ssh folder in $HOME"
   mkdir $HOME/.ssh
-  ls -la $HOME/.ssh
+  ls -ld $HOME/.ssh
   keyFile=$HOME/.config/sops/age/keys.txt
   just info "Preparing folder in .config for key."
   mkdir -p $HOME/.config/sops/age
-  ls -la $HOME/.config/sops/age
+  ls -ld $HOME/.config/sops/age
   bw list items --search SOPS | jq -r '.[].notes' > $keyFile
   just info "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
-  ls -la $HOME/.config/sops/age/keys.txt
+  ls -ld $HOME/.config/sops/age/keys.txt
   just info "$(cat $HOME/.config/sops/age/keys.txt)"
 
 _main:
@@ -128,9 +128,9 @@ _main:
   && just info "Exported var: $BW_SESSION" && just _sops
 
 _bwlogout:
-  just warn "Logging out of Bitwarden-cli"
+  just warn "Logging out of Bitwarden-cli..."
   bw logout
-  bw lock
+  just info "Build complete. You may now run: just switch all"
 
 _generate-hardware:
   just info "Generating hardware config and overwriting old..."
