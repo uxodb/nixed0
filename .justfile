@@ -121,8 +121,6 @@ _sops:
   just info "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
   ls -ld $HOME/.config/sops/age/keys.txt
   just info "$(cat $HOME/.config/sops/age/keys.txt)"
-  echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
-  just info "Added experimental features to nix.conf"
 
 _main:
   just warn "Login to bitwarden when prompted, keep 2FA ready."
@@ -132,7 +130,9 @@ _main:
 _bwlogout:
   just warn "Logging out of Bitwarden-cli..."
   bw logout
-  just info "Build complete. You may now run: just switch all"
+  just info "Build complete."
+  just info "To start building the flake with your just recipe, run the following:"
+  just warn "export NIX_CONFIG="experimental-features = nix-command flakes"
 
 _generate-hardware:
   just info "Generating hardware config and overwriting old..."
