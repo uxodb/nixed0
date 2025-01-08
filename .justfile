@@ -121,6 +121,8 @@ _sops:
   just info "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
   ls -ld $HOME/.config/sops/age/keys.txt
   just info "$(cat $HOME/.config/sops/age/keys.txt)"
+  echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
+  just info "Added experimental features to nix.conf"
 
 _main:
   just warn "Login to bitwarden when prompted, keep 2FA ready."
