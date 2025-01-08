@@ -9,6 +9,7 @@ pkgs.mkShellNoCC {
     jq
     sops
     bitwarden-cli
+    nh
     home-manager;
   };
 
