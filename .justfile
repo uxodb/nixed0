@@ -104,7 +104,7 @@ setboot:
 ##PREP##
 ########
 [doc("Prepares and builds the config on a fresh system")]
-build: && _bwlogin _sops _generate-hardware _gitremote _bwlogout
+build: && _main _generate-hardware _gitremote _bwlogout
   just warn "Starting build sequence in 3 seconds..."
   sleep 3
 
@@ -112,26 +112,27 @@ _sops:
   #!/usr/bin/env bash
   just info "Creating ssh folder in $HOME"
   mkdir $HOME/.ssh
-  ls -la $HOME/.ssh
+  ls -ld $HOME/.ssh
   keyFile=$HOME/.config/sops/age/keys.txt
   just info "Preparing folder in .config for key."
   mkdir -p $HOME/.config/sops/age
-  ls -la $HOME/.config/sops/age
+  ls -ld $HOME/.config/sops/age
   bw list items --search SOPS | jq -r '.[].notes' > $keyFile
   just info "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
-  ls -la $HOME/.config/sops/age/keys.txt
-  cat $HOME/.config/sops/age/keys.txt
+  ls -ld $HOME/.config/sops/age/keys.txt
+  just info "$(cat $HOME/.config/sops/age/keys.txt)"
 
-_bwlogin:
+_main:
   just warn "Login to bitwarden when prompted, keep 2FA ready."
-  export BW_SESSION=$(bw login | grep 'export BW_SESSION' | awk -F '"' '{print $2}')
-  just info "BW_SESSION exported."
-  just info $BW_SESSION
+  export BW_SESSION=$(bw login | grep 'export BW_SESSION' | awk -F '"' '{print $2}') \
+  && just info "Exported var: $BW_SESSION" && just _sops
 
 _bwlogout:
-  just warn "Logging out of Bitwarden-cli"
+  just warn "Logging out of Bitwarden-cli..."
   bw logout
-  bw lock
+  just info "Build complete."
+  just info "To start building the flake with your just recipe, run the following:"
+  just warn "export NIX_CONFIG="experimental-features = nix-command flakes"
 
 _generate-hardware:
   just info "Generating hardware config and overwriting old..."
