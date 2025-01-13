@@ -58,8 +58,7 @@ clean *args="":
     sleep 1
     sudo nix-collect-garbage
     sudo nix-collect-garbage --delete-old
-    sudo nixos-rebuild boot --flake {{PATH}}#{{FLAKE}}
-  else 
+  else
     just warn "Garbage collector: unreferenced packages"
     sleep 1
     sudo nix-collect-garbage
