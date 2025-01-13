@@ -83,7 +83,7 @@ update +inputs="all":
 [doc("Search for nixos and hm options. <option>")]
 search option:
   just info "Looking for option <{{option}}> in hm- and nixos-options"
-  manix {{option}} --source hm-options,nixos-options
+  manix {{option}} --source hm_options,nixos_ptions
 
 [doc("Show latest home-manager news")]
 news:
