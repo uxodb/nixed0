@@ -3,7 +3,11 @@
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm;
-    extraPackages = [pkgs.kdePackages.qt5compat];
+    extraPackages = [
+      pkgs.kdePackages.qtvirtualkeyboard
+      pkgs.kdePackages.qtmultimedia
+      pkgs.kdePackages.qtsvg
+    ];
     theme = "sddm-astronaut-theme";
     wayland.enable = true;
     settings = {

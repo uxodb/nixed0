@@ -2,7 +2,6 @@
 
   environment.systemPackages = builtins.attrValues {
     inherit (pkgs)
-    sddm-astronaut
     sops
     just
     wget
@@ -18,6 +17,9 @@
     manix
     nurl
     nh;
+    astronaut = pkgs.callPackage ../pkgs/sddm-astronaut.nix {
+      embeddedTheme = "pixel_sakura"; 
+    };
   };
 
   # Failed to load/create freetype error
