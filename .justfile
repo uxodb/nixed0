@@ -110,34 +110,33 @@ build: && _main _generate-hardware _gitremote _bwlogout
 
 _sops:
   #!/usr/bin/env bash
-  just info "Creating ssh folder in $HOME"
+  just warn "Creating ssh folder in $HOME"
   mkdir $HOME/.ssh
   ls -ld $HOME/.ssh
   keyFile=$HOME/.config/sops/age/keys.txt
-  just info "Preparing folder in .config for key."
+  just warn "Preparing folder in .config for key."
   mkdir -p $HOME/.config/sops/age
-  ls -ld $HOME/.config/sops/age
+  just info "$(ls -ld $HOME/.config/sops/age)
   bw list items --search SOPS | jq -r '.[].notes' > $keyFile
-  just info "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
-  ls -ld $HOME/.config/sops/age/keys.txt
+  just warn "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
+  just info "$(ls -ld $HOME/.config/sops/age/keys.txt)
   just info "$(cat $HOME/.config/sops/age/keys.txt)"
 
 _main:
   just warn "Login to bitwarden when prompted, keep 2FA ready."
   export BW_SESSION=$(bw login | grep 'export BW_SESSION' | awk -F '"' '{print $2}') \
-  && just info "Exported var: $BW_SESSION" && just _sops
+  && just warn "Exported var: $BW_SESSION" && just _sops
 
 _bwlogout:
   just warn "Logging out of Bitwarden-cli..."
   bw logout
   just info "Build complete."
-  just info "To start building the flake with your just recipe, run the following:"
-  just warn "export NIX_CONFIG="experimental-features = nix-command flakes"
+  just info "To start building the flake, run the _firstbuild recipe"
 
 _generate-hardware:
-  just info "Generating hardware config and overwriting old..."
+  just warn "Generating hardware config and overwriting old..."
   nixos-generate-config --show-hardware-config > $HOME/nixed0/host/hardware.nix
-  ls -la $HOME/nixed0/host/hardware.nix
+  just info "$(ls -ld $HOME/nixed0/host/hardware.nix)"
 
 _gitremote:
   #!/usr/bin/env bash
@@ -152,11 +151,9 @@ _gitremote:
   just info "Remote set"
   git remote -v
 
-_install:
-  just warn "do not forget mounts"
-  just warn "do not forget mounts"
-  sleep 3
-  nixos-install --root /mnt/ --flake {{PATH}}#{{FLAKE}}
+_firstbuild:
+  sudo nixos-rebuild switch --flake {{PATH}}#{{FLAKE}} --experimental-features "nix-command flakes"
+  home-manager switch --impure --flake {{PATH}}#{{PROFILE}}
 
 ########
 ##PRIV##
