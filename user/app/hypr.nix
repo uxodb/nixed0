@@ -21,7 +21,7 @@ in {
       "$fileManager" = "nautilus";
       "$menu" = "fuzzel";
       "$screenshot" = "flameshot gui";
-      "$screencast" = 'wl-screenrec -g "$(slurp)"';
+      "$screencast" = "wl-screenrec -g \"$(slurp)\"";
       exec-once = [
         "$terminal"
         "hyprpaper"
@@ -36,7 +36,7 @@ in {
       ];
       general = {
         gaps_in = 4;
-        gaps_out = 8;
+        gaps_out = 15;
         border_size = 2;
         "col.active_border" = "$peach $mauve 45deg";
         "col.inactive_border" = "$lavender $green 45deg;";
@@ -53,16 +53,16 @@ in {
         "col.border_locked_inactive" = "$lavender $green 45deg";
       };
       decoration = {
-        rounding = 10;
-        active_opacity = 1.0;
-        inactive_opacity = 0.8;
-        # dim_inactive = true;
-        # dim_strength = 0.2;
-        # dim_special = 0.3;
+        rounding = 3;
+        active_opacity = 0.7;
+        inactive_opacity = 0.5;
+        dim_inactive = true;
+        dim_strength = 0.3;
+        dim_special = 0.3;
         blur = {
           enabled = true;
-          size = 10;
-          passes = 2;
+          size = 8;
+          passes = 3;
           new_optimizations = true;
           popups = true;
           ignore_opacity = true;
@@ -81,7 +81,7 @@ in {
           "windowsOut, 1, 7, default, popin 80%"
           "border, 1, 10, default"
           "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
+          "workspaces, 1, 6, default, slidefade 30%"
         ];
       };
       dwindle = {
@@ -119,6 +119,7 @@ in {
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo," #dwindle
         "$mainMod, J, togglesplit," #dwindle
+        "$mainMod, F, fullscreen,"
           
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
