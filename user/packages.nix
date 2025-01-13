@@ -37,6 +37,10 @@
         wl-screenrec
         wf-recorder
         slurp
+        swappy
+        # qalculate-qt
+        # qalculate-gtk
+        ghostty
         nwg-look;
       };
     in 
