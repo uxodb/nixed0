@@ -38,6 +38,7 @@ in {
     accent = "pink";
     hyprland.enable = true;
     zsh-syntax-highlighting.enable = true;
+    btop.enable = true;
     kitty.enable = true;
     fuzzel.enable = true;
     bat.enable = true;
@@ -47,11 +48,7 @@ in {
     kvantum.enable = true;
   };
 
-  # programs.rofi.theme = (config.scheme inputs.base16-rofi);
-  # programs.rofi.theme = "${xSettings.appConfig}/rofi/style_3.rasi";
-
   # eza
   xdg.configFile."eza/theme.yml" = {
     source = "${appConfig}/eza/catppuccin.yml";
   };
-}
