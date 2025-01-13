@@ -52,3 +52,4 @@ in {
   xdg.configFile."eza/theme.yml" = {
     source = "${appConfig}/eza/catppuccin.yml";
   };
+}
