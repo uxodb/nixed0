@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs.follows = "hyprland/nixpkgs";
+    # nixpkgs.follows = "hyprland/nixpkgs";
     hardware.url = "github:NixOS/nixos-hardware";
     ucodenix.url = "github:uxodb/ucodenix";
     catppuccin.url = "github:catppuccin/nix?ref=v1.2.1";
