@@ -16,6 +16,7 @@
     nix-search-cli
     manix
     nurl
+    nix-init
     nh;
     astronaut = pkgs.callPackage ../pkgs/sddm-astronaut.nix {
       embeddedTheme = "pixel_sakura"; 
