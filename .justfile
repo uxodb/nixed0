@@ -115,16 +115,15 @@ _sops:
   keyFile=$HOME/.config/sops/age/keys.txt
   just warn "Preparing folder in .config for key."
   mkdir -p $HOME/.config/sops/age
-  just info "$(ls -ld $HOME/.config/sops/age)
+  just info "$(ls -ld $HOME/.config/sops/age)"
   bw list items --search SOPS | jq -r '.[].notes' > $keyFile
   just warn "Exported age key from Bitwarden to ~/.config/sops/age/keys.txt"
-  just info "$(ls -ld $HOME/.config/sops/age/keys.txt)
+  just info "$(ls -ld $HOME/.config/sops/age/keys.txt)"
   just info "$(cat $HOME/.config/sops/age/keys.txt)"
 
 _main:
   just warn "Login to bitwarden when prompted, keep 2FA ready."
-  export BW_SESSION=$(bw login | grep 'export BW_SESSION' | awk -F '"' '{print $2}') \
-  && just warn "Exported var: $BW_SESSION" && just _sops
+  export BW_SESSION=$(bw login | grep 'export BW_SESSION' | awk -F '"' '{print $2}') && just warn "Exported var: $BW_SESSION" && just _sops
 
 _bwlogout:
   just warn "Logging out of Bitwarden-cli..."
@@ -151,7 +150,7 @@ _gitremote:
   git remote -v
 
 _firstbuild:
-  sudo nixos-rebuild switch --flake {{PATH}}#{{FLAKE}} --experimental-features "nix-command flakes"
+  sudo nixos-rebuild switch --flake {{PATH}}#{{FLAKE}} --use-remote-sudo
   home-manager switch --impure --flake {{PATH}}#{{PROFILE}}
 
 ########
