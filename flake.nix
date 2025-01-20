@@ -13,7 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland?rev=e75e2cdac79417ffdbbbe903f72668953483a4e7";#?ref=v0.46.2";
+      url = "github:hyprwm/Hyprland?ref=v0.46.2";#?rev=e75e2cdac79417ffdbbbe903f72668953483a4e7";
     };
     hypr-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -32,7 +32,7 @@
       # inputs.hyprland.follows = "hyprland";
     };
     hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel?ref=pull/633/head";
+      url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
