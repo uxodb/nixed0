@@ -91,6 +91,11 @@ in {
     wlr.enable = true;
   };
 
+  swapDevices = [{
+    device = "swapfile";
+    size = 16 * 1024;
+  }];
+
   security = {
     rtkit.enable = true;
     sudo.wheelNeedsPassword = false;
