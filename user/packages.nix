@@ -12,36 +12,38 @@
         okular
         qtstyleplugin-kvantum;
         inherit (pkgs)
-        swww
-        plex-desktop
-        vesktop
-        nautilus
-        parsec-bin
-        hyprpanel
-        nwg-displays
-        waypaper
-        google-chrome
+        # hyprpanel
+        # qalculate-gtk
+        # qalculate-qt
+        # qbittorrent
+        # seafile-client
+        # veracrypt
+	dconf
+        ghostty
         gnome-calendar
         gnome-clocks
-        # veracrypt
-        # qbittorrent
+        google-chrome
+        keepassxc
         mpc-qt
         mpv
-        # seafile-client
-        protonvpn-gui
-        protonmail-desktop
-        whatsapp-for-linux
-        p7zip
-        wl-clipboard
+        nautilus
+        nwg-displays
+        nwg-look
         obs-studio
-        wl-screenrec
-        wf-recorder
+        p7zip
+        parsec-bin
+        plex-desktop
+        proton-pass
+        protonmail-desktop
+        protonvpn-gui
         slurp
         swappy
-        # qalculate-qt
-        # qalculate-gtk
-        ghostty
-        nwg-look;
+        swww
+        vesktop
+        waypaper
+        wf-recorder
+        wl-clipboard
+        wl-screenrec;
       };
     in 
       nixPackages // flakePackages
