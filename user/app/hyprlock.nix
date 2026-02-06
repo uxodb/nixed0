@@ -5,7 +5,7 @@ let
 in {
   
   programs.hyprlock = {
-    enable = true;
+    enable = false;
     settings = {
       # source = "$HOME/.config/hypr/mocha.conf";
       source = "${inputs.self}/assets/mocha.conf";
