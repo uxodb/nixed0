@@ -1,7 +1,7 @@
 {configs, pkgs, inputs, xSettings, ...}: {
 
   programs.hyprland = {
-    enable = true;
+    enable = false;
     package =
       inputs.hyprland.packages.${pkgs.system}.hyprland;
     portalPackage =

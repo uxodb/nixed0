@@ -6,7 +6,7 @@ let
 in {
   
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = false;
     systemd.enable = lib.mkForce false;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [ 
@@ -14,7 +14,6 @@ in {
     #   inputs.dynamicpointer.packages.${pkgs.system}.hypr-dynamic-cursors
     #   inputs.hypr-plugins.packages.${pkgs.system}.hyprexpo
     #   # pkgs.hyprlandPlugins.hyprfocus
-      inputs.Hyprchroma.packages.${pkgs.system}.Hypr-DarkWindow
     ];
     settings = {
       "$terminal" = "kitty";
@@ -22,6 +21,7 @@ in {
       "$menu" = "fuzzel";
       "$screenshot" = "flameshot gui";
       "$screencast" = "wl-screenrec -g \"$(slurp)\"";
+      "$lock" = "hyprlock";
       exec-once = [
         "$terminal"
         "hyprpaper"
@@ -30,9 +30,8 @@ in {
         "flameshot"
       ];
       monitor = [
-        # "DP-1, 2560x1440@144, 0x0, 1"
-        # "DP-2, 1920x1080@60, 2560x0, 1"
-        "Virtual-1, 1920x1080@60, auto, 1"
+        "DP-1, 2560x1440@144, 0x0, 1"
+        "DP-2, 1920x1080@60, 2560x0, 1"
       ];
       general = {
         gaps_in = 4;
@@ -110,6 +109,7 @@ in {
       };
       "$mainMod" = "SUPER";
       bind = [
+        "$mainMod, L, exec, $lock"
         "Alt_L, grave, exec, $screenshot"
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
@@ -120,7 +120,7 @@ in {
         "$mainMod, P, pseudo," #dwindle
         "$mainMod, J, togglesplit," #dwindle
         "$mainMod, F, fullscreen,"
-          
+
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
@@ -155,12 +155,10 @@ in {
         " , XF86AudioPlay, exec, playerctl play-pause"
         " , XF86AudioPrev, exec, playerctl previous"
       ];
-      windowrulev2 = [
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-        "plugin:chromakey,fullscreen:0"
+      windowrule = [
+        "suppress_event maximize, match:class .*"
+        "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
       ];
-      chromakey_background = "7,8,17";
     };
   };
 }
