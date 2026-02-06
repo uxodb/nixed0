@@ -47,6 +47,10 @@
       url = "github:Svenum/Solaar-Flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
@@ -79,6 +83,7 @@
           inputs.catppuccin.nixosModules.catppuccin
           inputs.ucodenix.nixosModules.default
           inputs.solaar.nixosModules.default
+          inputs.dms.nixosModules.dank-material-shell
         ];
       };
 
