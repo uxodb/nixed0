@@ -2,45 +2,45 @@
 
   environment.systemPackages = builtins.attrValues {
     inherit (pkgs)
-    sops
-    just
-    wget
-    jq
     curl
-    tree
-    ssh-to-age
-    unzip
-    unrar
+    jq
+    just
+    manix
+    nh
     nix-health
+    nix-init
     nix-melt
     nix-search-cli
-    manix
     nurl
-    nix-init
-    nh;
-    astronaut = pkgs.callPackage ../pkgs/sddm-astronaut.nix {
-      embeddedTheme = "pixel_sakura"; 
-    };
+    sops
+    ssh-to-age
+    tree
+    unrar
+    unzip
+    wget;
+#    astronaut = pkgs.callPackage ../pkgs/sddm-astronaut.nix {
+#     embeddedTheme = "pixel_sakura"; 
+#    };
   };
 
   # Failed to load/create freetype error
   # fc-cache -r
   fonts.packages = builtins.attrValues {
     inherit (pkgs.nerd-fonts)
+    _0xproto
+    fantasque-sans-mono
     fira-code
     fira-mono
-    jetbrains-mono
-    fantasque-sans-mono
-    ubuntu-mono
-    ubuntu
-    _0xproto
     hack
     inconsolata
-    roboto-mono;
+    jetbrains-mono
+    roboto-mono
+    ubuntu
+    ubuntu-mono;
     inherit (pkgs)
     corefonts
-    vistafonts
     font-awesome
-    noto-fonts-emoji;
+    noto-fonts-color-emoji
+    vista-fonts;
   };
 }
