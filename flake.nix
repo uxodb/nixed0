@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # nixpkgs.follows = "hyprland/nixpkgs";
     hardware.url = "github:NixOS/nixos-hardware";
     ucodenix.url = "github:uxodb/ucodenix";
     catppuccin.url = "github:catppuccin/nix?ref=v1.2.1";
@@ -30,7 +29,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let 
       xSettings = {
         system = "x86_64-linux";
@@ -72,7 +71,6 @@
         };
         modules = [
           ./user/home.nix
-          inputs.hyprland.homeManagerModules.default
           inputs.catppuccin.homeManagerModules.catppuccin
           inputs.nix-colors.homeManagerModules.default
         ];
