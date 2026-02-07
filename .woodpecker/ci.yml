@@ -1,0 +1,19 @@
+steps:
+  - name: check
+    image: nixos/nix:latest
+    pull: true
+    when:
+      - branch: main
+    environment:
+      NIX_CONFIG: "experimental-features = nix-command flakes"
+    commands:
+      - nix --version
+      - nix flake check --show-trace
+  - name: format
+    image: nixos/nix:latest
+    when:
+      - branch: main
+    environment:
+      NIX_CONFIG: "experimental-features = nix-command flakes"
+    commands:
+      - nix shell github:kamadorueda/alejandra --command alejandra --check .
