@@ -14,9 +14,9 @@ in {
         owner = username;
 	path = "${homeDir}/.ssh/github_id_ed25519";
       };
-      named0_id_rsa = {
+      lsw_id_ed25519 = {
         owner = username;
-        path = "${homeDir}/.ssh/named0_id_rsa";
+        path = "${homeDir}/.ssh/lsw_id_ed25519";
       };
       nixed0_id_ed25519 = {  # age key convert
         mode = "0444";
