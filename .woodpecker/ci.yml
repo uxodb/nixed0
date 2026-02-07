@@ -1,9 +1,10 @@
+when:
+  branch: main
+
 steps:
   - name: check
     image: nixos/nix:latest
     pull: true
-    when:
-      - branch: main
     environment:
       NIX_CONFIG: "experimental-features = nix-command flakes"
     commands:
@@ -11,8 +12,6 @@ steps:
       - nix flake check --show-trace
   - name: format
     image: nixos/nix:latest
-    when:
-      - branch: main
     environment:
       NIX_CONFIG: "experimental-features = nix-command flakes"
     commands:
