@@ -12,7 +12,7 @@ in {
     extraPackages = builtins.attrValues {
       inherit (pkgs)
       gcc
-      nodejs_23
+      nodejs_25
       unzip;
     };
   };
