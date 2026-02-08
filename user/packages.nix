@@ -18,7 +18,7 @@
         # qbittorrent
         # seafile-client
         # veracrypt
-	dconf
+        dconf
         ghostty
         gnome-calendar
         gnome-clocks
@@ -31,11 +31,10 @@
         nwg-look
         obs-studio
         p7zip
-        parsec-bin
-        plex-desktop
         proton-pass
         protonmail-desktop
         protonvpn-gui
+        signal-desktop
         slurp
         swappy
         swww
