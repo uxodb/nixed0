@@ -15,7 +15,7 @@ in {
       allowUnfreePredicate = (_: true);
     };
     overlays = [ 
-      inputs.hyprpanel.overlay 
+      # inputs.hyprpanel.overlay 
       (import ../overlay/manix.nix)
     ];
   };
