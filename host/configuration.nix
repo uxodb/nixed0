@@ -8,19 +8,7 @@ in {
     ./packages.nix
     ./sops.nix
   ];
-  
-  #######################
-  #######################
-  ####### Hyper-V #######
-  ###########################################################
-  ###########################################################
-  virtualisation.hypervGuest.enable = true;               ###
-  boot.blacklistedKernelModules = [ "hyperv_fb" ];        ###
-  #boot.initrd.kernelModules = ["hv_vmbus" "hv_storvsc"]; ###
-  boot.kernelParams = ["video=hyperv_fb:1920x1080"];      ###
-  boot.kernel.sysctl."vm.overcommit_memory" = "1";        ###
-  ###########################################################
-  ###########################################################
+
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -28,19 +16,15 @@ in {
     # keep-going = true;
     # sync-before-registering = true;
     # use-xdg-base-directories = true;
-    substituters = ["https://hyprland.cachix.org" "https://cosmic.cachix.org"];
-    trusted-public-keys = [
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
-    ];
+    # substituters = ["https://hyprland.cachix.org" "https://cosmic.cachix.org"];
+    # trusted-public-keys = [
+    #   "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    #   "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+    # ];
   };
 
   boot.loader = {
-    # systemd-boot
-    # systemd-boot.enable = true;
-    # systemd-boot.configurationLimit = 15;
     efi.canTouchEfiVariables = true;
-    # grub
     grub = {
       enable = true;
       devices = [ "nodev" ];
@@ -53,9 +37,6 @@ in {
 
   networking = {
     hostName = hostname;
-    useNetworkd = true;
-    #useDHCP = true;
-    interfaces.eth0.useDHCP = true;
   };
 
   time.timeZone = timezone;
@@ -80,7 +61,6 @@ in {
   };
   hardware = {
     ckb-next.enable = true;
-    amdgpu.amdvlk.enable = true;
     graphics = {
       enable = true;
       enable32Bit = true;
@@ -90,11 +70,6 @@ in {
     enable = true;
     wlr.enable = true;
   };
-
-  swapDevices = [{
-    device = "swapfile";
-    size = 16 * 1024;
-  }];
 
   security = {
     rtkit.enable = true;
@@ -108,7 +83,7 @@ in {
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     uid = 1000;
-    hashedPasswordFile = config.sops.secrets.userpasswd.path; 
+    hashedPasswordFile = config.sops.secrets.userpasswd.path;
   };
 
   system.stateVersion = "24.05"; # Did you read the comment?
