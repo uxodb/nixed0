@@ -1,9 +1,8 @@
 { config, pkgs, inputs, xSettings, ... }: {
   services.locate = {
     enable = true;
-    package = pkgs.mlocate;
+    package = pkgs.plocate;
     interval = "never";
-    localuser = null;
     # prunePaths = "";
   };
 }
