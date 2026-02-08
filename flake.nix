@@ -27,10 +27,14 @@
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alejandra = {
+      url = "github:kamadorueda/alejandra/4.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
-    let 
+  outputs = { self, nixpkgs, home-manager, alejandra, ... }@inputs:
+    let
       xSettings = {
         system = "x86_64-linux";
         timezone = "Europe/Vienna";
@@ -60,6 +64,9 @@
           inputs.ucodenix.nixosModules.default
           inputs.solaar.nixosModules.default
           inputs.dms.nixosModules.dank-material-shell
+          {
+            environment.systemPackages = [alejandra.defaultPackage.x86_64-linux];
+          }
         ];
       };
 
