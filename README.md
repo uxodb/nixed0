@@ -1,3 +1,4 @@
+[![status-badge](https://ci.mkinitcp.io/api/badges/1/status.svg)](https://ci.mkinitcp.io/repos/1)
 # nixed0
 ![nixed0](assets/nixos_logo.png)
 
