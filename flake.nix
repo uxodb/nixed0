@@ -48,7 +48,7 @@
     in
     {
       devShells.${xSettings.system} = {
-        default = import ./shell/build.nix { pkgs = xpkgs; inherit xSettings; };
+        default = import ./shells/build.nix { pkgs = xpkgs; inherit xSettings; };
       };
 
       nixosConfigurations.nixed0 = nixpkgs.lib.nixosSystem {
@@ -77,7 +77,7 @@
 	  inherit xSettings;
         };
         modules = [
-          ./user/home.nix
+          ./home/default.nix
           inputs.catppuccin.homeManagerModules.catppuccin
           inputs.nix-colors.homeManagerModules.default
         ];
