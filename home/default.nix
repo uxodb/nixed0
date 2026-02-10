@@ -4,7 +4,7 @@ let
 in {
 
   imports = [
-    ./app
+    ./programs
     ./theming.nix
     ./packages.nix
   ];

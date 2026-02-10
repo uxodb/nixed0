@@ -7,6 +7,6 @@
         (lists.forEach (mapAttrsToList (name: _: path + ("/" + name))
 	  (filterAttrs filter (builtins.readDir path))))
         import;
-  in { imports = importNixFiles ../programs filterNixFiles; }
+  in { imports = importNixFiles ../services filterNixFiles; }
 
 

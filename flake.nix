@@ -41,7 +41,7 @@
         locale = "en_US.UTF-8";
         username = "uxodb";
         hostname = "nixed0";
-        appConfig = "${inputs.self}/user/conf";
+        appConfig = "${inputs.self}/home/dotfiles";
         theme = "catppuccin-mocha";
       };
       xpkgs = nixpkgs.legacyPackages.${xSettings.system};
