@@ -58,7 +58,7 @@
 	  inherit xSettings;
         };
         modules = [
-          ./host/configuration.nix
+          ./nixos/configuration.nix
           inputs.sops-nix.nixosModules.sops
           inputs.catppuccin.nixosModules.catppuccin
           inputs.ucodenix.nixosModules.default
