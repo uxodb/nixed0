@@ -9,6 +9,8 @@
     inherit
       (pkgs)
       curl
+      gnupg
+      pinentry
       jq
       just
       manix
