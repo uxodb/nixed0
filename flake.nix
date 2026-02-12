@@ -63,7 +63,6 @@
           inputs.catppuccin.nixosModules.catppuccin
           inputs.ucodenix.nixosModules.default
           inputs.solaar.nixosModules.default
-          inputs.dms.nixosModules.dank-material-shell
           {
             environment.systemPackages = [alejandra.defaultPackage.x86_64-linux];
           }
