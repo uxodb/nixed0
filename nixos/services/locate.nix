@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, xSettings, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  xSettings,
+  ...
+}: {
   services.locate = {
     enable = true;
     package = pkgs.plocate;

@@ -1,16 +1,19 @@
-{ pkgs, xSettings }:
-
+{
+  pkgs,
+  xSettings,
+}:
 pkgs.mkShellNoCC {
-
   packages = builtins.attrValues {
-    inherit (pkgs)
-    just
-    git
-    jq
-    sops
-    bitwarden-cli
-    nh
-    home-manager;
+    inherit
+      (pkgs)
+      just
+      git
+      jq
+      sops
+      bitwarden-cli
+      nh
+      home-manager
+      ;
   };
 
   shellHook = ''

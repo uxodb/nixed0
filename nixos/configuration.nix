@@ -1,8 +1,13 @@
-{ config, pkgs, inputs, xSettings, ... }:
-let
+{
+  config,
+  pkgs,
+  inputs,
+  xSettings,
+  ...
+}: let
   inherit (xSettings) locale hostname username timezone;
 in {
-  imports = [ 
+  imports = [
     ./services
     ./hardware.nix
     ./packages.nix
@@ -11,7 +16,7 @@ in {
 
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = ["nix-command" "flakes"];
     preallocate-contents = true;
     # keep-going = true;
     # sync-before-registering = true;
@@ -27,7 +32,7 @@ in {
     efi.canTouchEfiVariables = true;
     grub = {
       enable = true;
-      devices = [ "nodev" ];
+      devices = ["nodev"];
       efiSupport = true;
       useOSProber = true;
     };
@@ -80,7 +85,7 @@ in {
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = [ "wheel" ];
+    extraGroups = ["wheel"];
     shell = pkgs.zsh;
     uid = 1000;
     hashedPasswordFile = config.sops.secrets.userpasswd.path;

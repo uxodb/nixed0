@@ -1,7 +1,11 @@
-
-{ config, pkgs, lib, inputs, xSettings, ... }:
 {
-
+  config,
+  pkgs,
+  lib,
+  inputs,
+  xSettings,
+  ...
+}: {
   programs.noctalia-shell = {
     enable = true;
     settings = {
@@ -9,7 +13,7 @@
       bar = {
         barType = "simple";
         position = "top";
-        monitors = [ ];
+        monitors = [];
         density = "default";
         showOutline = false;
         showCapsule = true;
@@ -71,7 +75,7 @@
             }
           ];
         };
-        screenOverrides = [ ];
+        screenOverrides = [];
       };
       general = {
         avatarImage = "";
@@ -104,7 +108,7 @@
         allowPasswordWithFprintd = false;
         clockStyle = "custom";
         clockFormat = "hh\nmm";
-        lockScreenMonitors = [ ];
+        lockScreenMonitors = [];
         lockScreenBlur = 0;
         lockScreenTint = 0;
         keybinds = {
@@ -165,7 +169,7 @@
         enabled = true;
         overviewEnabled = false;
         directory = "";
-        monitorDirectories = [ ];
+        monitorDirectories = [];
         enableMultiMonitorDirectories = false;
         showHiddenFiles = false;
         viewMode = "single";
@@ -205,7 +209,7 @@
         clipboardWatchTextCommand = "wl-paste --type text --watch cliphist store";
         clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
         position = "center";
-        pinnedApps = [ ];
+        pinnedApps = [];
         useApp2Unit = false;
         sortByMostUsed = true;
         terminalCommand = "alacritty -e";
@@ -319,8 +323,8 @@
         floatingRatio = 1;
         size = 1;
         onlySameOutput = true;
-        monitors = [ ];
-        pinnedApps = [ ];
+        monitors = [];
+        pinnedApps = [];
         colorizeIcons = false;
         pinnedStatic = false;
         inactiveIndicators = false;
@@ -372,7 +376,7 @@
       };
       notifications = {
         enabled = true;
-        monitors = [ ];
+        monitors = [];
         location = "top_right";
         overlayLayer = true;
         backgroundOpacity = 1;
@@ -409,14 +413,14 @@
           1
           2
         ];
-        monitors = [ ];
+        monitors = [];
       };
       audio = {
         volumeStep = 5;
         volumeOverdrive = false;
         cavaFrameRate = 30;
         visualizerType = "linear";
-        mprisBlacklist = [ ];
+        mprisBlacklist = [];
         preferredPlayer = "";
         volumeFeedback = false;
       };
@@ -436,7 +440,7 @@
         monitorForColors = "";
       };
       templates = {
-        activeTemplates = [ ];
+        activeTemplates = [];
         enableUserTheming = false;
       };
       nightLight = {
@@ -465,7 +469,7 @@
       desktopWidgets = {
         enabled = false;
         gridSnap = false;
-        monitorWidgets = [ ];
+        monitorWidgets = [];
       };
     };
   };

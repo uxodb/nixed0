@@ -1,4 +1,4 @@
-[![status-badge](https://ci.mkinitcp.io/api/badges/1/status.svg)](https://ci.mkinitcp.io/repos/1)
+[![status-badge](https://ci.mkinitcp.io/api/badges/1/status.svg?events=pull_request%2Cpush)](https://ci.mkinitcp.io/repos/1)
 # nixed0
 ![nixed0](assets/logos/nixos_logo.png)
 
