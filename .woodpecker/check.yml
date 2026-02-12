@@ -1,6 +1,6 @@
 when:
-  event: pull_request
-  branch: main
+  - event: pull_request
+    branch: main
 
 steps:
   - name: check
