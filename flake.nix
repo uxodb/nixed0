@@ -63,6 +63,7 @@
           inputs.catppuccin.nixosModules.catppuccin
           inputs.ucodenix.nixosModules.default
           inputs.solaar.nixosModules.default
+          inputs.noctalia.nixosModules.default
           {
             environment.systemPackages = [alejandra.defaultPackage.x86_64-linux];
           }
@@ -71,8 +72,8 @@
 
       homeConfigurations."uxodb" = home-manager.lib.homeManagerConfiguration {
         pkgs = xpkgs;
-        extraSpecialArgs = { 
-          inherit inputs; 
+        extraSpecialArgs = {
+          inherit inputs;
 	  inherit xSettings;
         };
         modules = [
