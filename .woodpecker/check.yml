@@ -1,0 +1,13 @@
+when:
+  - event: pull_request
+    branch: main
+
+steps:
+  - name: check
+    image: nixos/nix:latest
+    pull: true
+    environment:
+      NIX_CONFIG: "experimental-features = nix-command flakes"
+    commands:
+      - nix --version
+      - nix flake check --show-trace
