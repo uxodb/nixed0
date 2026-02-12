@@ -13,12 +13,12 @@ steps:
   - name: push
     image: appleboy/drone-git-push
     settings:
-      branch: ${CI_COMMIT_SOURCE_BRANCH}
-      remote: ${CI_REPO_CLONE_SSH_URL}
+      branch: $CI_COMMIT_SOURCE_BRANCH
+      remote: $CI_REPO_CLONE_SSH_URL
       force: false
       commit: true
       commit_message: "style: auto-format code [ci skip]"
       ssh_key:
         from_secret: gh_key
       author_name: woodpecker-ci[bot]
-      author_email: ${CI_COMMIT_AUTHOR_EMAIL}
+      author_email: $CI_COMMIT_AUTHOR_EMAIL
