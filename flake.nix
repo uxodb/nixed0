@@ -23,12 +23,12 @@
       url = "github:Svenum/Solaar-Flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     alejandra = {
       url = "github:kamadorueda/alejandra/4.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -80,6 +80,7 @@
           ./home/default.nix
           inputs.catppuccin.homeManagerModules.catppuccin
           inputs.nix-colors.homeManagerModules.default
+          inputs.noctalia.homeModules.default
         ];
       };
     };
