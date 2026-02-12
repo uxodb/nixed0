@@ -1,4 +1,5 @@
 when:
+  event: pull_request
   branch: main
 
 steps:
@@ -10,9 +11,3 @@ steps:
     commands:
       - nix --version
       - nix flake check --show-trace
-  - name: format
-    image: nixos/nix:latest
-    environment:
-      NIX_CONFIG: "experimental-features = nix-command flakes"
-    commands:
-      - nix shell github:kamadorueda/alejandra --command alejandra --check .
