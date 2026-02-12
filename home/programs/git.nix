@@ -1,5 +1,10 @@
-{ config, pkgs, lib, xSettings, ... }: {
-
+{
+  config,
+  pkgs,
+  lib,
+  xSettings,
+  ...
+}: {
   programs.git = {
     enable = true;
     userName = "uxodb";

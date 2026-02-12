@@ -1,5 +1,10 @@
-{ config, pkgs, inputs, xSettings, ... }: {
-
+{
+  config,
+  pkgs,
+  inputs,
+  xSettings,
+  ...
+}: {
   programs.xwayland = {
     enable = true;
   };

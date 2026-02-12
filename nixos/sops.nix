@@ -1,10 +1,12 @@
-{ config, inputs, xSettings,  ... }:
-
-let
+{
+  config,
+  inputs,
+  xSettings,
+  ...
+}: let
   inherit (xSettings) username;
   homeDir = config.users.users.uxodb.home;
 in {
-
   sops = {
     defaultSopsFile = ../secrets.json;
     age.keyFile = "${homeDir}/.config/sops/age/keys.txt";
@@ -12,13 +14,14 @@ in {
     secrets = {
       github_id_ed25519 = {
         owner = username;
-	path = "${homeDir}/.ssh/github_id_ed25519";
+        path = "${homeDir}/.ssh/github_id_ed25519";
       };
       lsw_id_ed25519 = {
         owner = username;
         path = "${homeDir}/.ssh/lsw_id_ed25519";
       };
-      nixed0_id_ed25519 = {  # age key convert
+      nixed0_id_ed25519 = {
+        # age key convert
         mode = "0444";
       };
       sshconfig = {

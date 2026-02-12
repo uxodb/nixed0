@@ -24,14 +24,13 @@ stdenvNoCC.mkDerivation rec {
     qtmultimedia
   ];
 
-  installPhase =
-    let
-      iniFormat = pkgs.formats.ini { };
-      configFile = iniFormat.generate "" { General = themeConfig; };
+  installPhase = let
+    iniFormat = pkgs.formats.ini {};
+    configFile = iniFormat.generate "" {General = themeConfig;};
 
-      basePath = "$out/share/sddm/themes/sddm-astronaut-theme";
-      sedString = "ConfigFile=Themes/";
-    in
+    basePath = "$out/share/sddm/themes/sddm-astronaut-theme";
+    sedString = "ConfigFile=Themes/";
+  in
     ''
       mkdir -p ${basePath}
       cp -r $src/* ${basePath}

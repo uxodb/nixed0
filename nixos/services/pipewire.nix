@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, xSettings, ...}: {
+{
+  config,
+  pkgs,
+  inputs,
+  xSettings,
+  ...
+}: {
   services.pipewire = {
     enable = true;
     pulse.enable = true;

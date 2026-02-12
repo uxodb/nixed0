@@ -1,11 +1,14 @@
-{ config, pkgs, lib, xSettings, ... }: 
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  xSettings,
+  ...
+}: let
   inherit (config.lib.file) mkOutOfStoreSymlink;
   inherit (xSettings) appConfig;
   inherit (config.home) homeDirectory;
 in {
-
   programs.firefox = {
     enable = true;
     profiles.default = {
@@ -27,11 +30,11 @@ in {
       AppAutoUpdate = false;
       UserMessaging = {
         SkipOnboarding = true;
-	MoreFromMozilla = false;
-	FirefoxLabs = false;
-	UrlbarInterventions = false;
-	FeatureRecommendations = false;
-	ExtensionRecommendations = false;
+        MoreFromMozilla = false;
+        FirefoxLabs = false;
+        UrlbarInterventions = false;
+        FeatureRecommendations = false;
+        ExtensionRecommendations = false;
       };
     };
   };

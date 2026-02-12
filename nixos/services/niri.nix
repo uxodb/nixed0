@@ -1,5 +1,10 @@
-{configs, pkgs, inputs, xSettings, ...}: {
-
+{
+  configs,
+  pkgs,
+  inputs,
+  xSettings,
+  ...
+}: {
   programs.niri = {
     enable = true;
   };

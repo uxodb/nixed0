@@ -1,10 +1,13 @@
-{ config, pkgs, lib, xSettings, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  xSettings,
+  ...
+}: let
   inherit (config.lib.file) mkOutOfStoreSymlink;
   inherit (xSettings) appConfig;
 in {
-
   programs.feh = {
     enable = true;
     buttons = {

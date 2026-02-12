@@ -1,5 +1,10 @@
-{ config, pkgs, lib, xSettings, ... }: {
-
+{
+  config,
+  pkgs,
+  lib,
+  xSettings,
+  ...
+}: {
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";

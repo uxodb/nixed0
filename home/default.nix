@@ -1,8 +1,12 @@
-{ config, pkgs, inputs, xSettings, ... }:
-let
-   inherit (xSettings) username;
+{
+  config,
+  pkgs,
+  inputs,
+  xSettings,
+  ...
+}: let
+  inherit (xSettings) username;
 in {
-
   imports = [
     ./programs
     ./theming.nix
@@ -12,9 +16,9 @@ in {
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
+      allowUnfreePredicate = _: true;
     };
-    overlays = [ 
+    overlays = [
       (import ../overlays/manix.nix)
     ];
   };
@@ -55,7 +59,7 @@ in {
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "text/html" = [ "firefox.desktop" ];
+        "text/html" = ["firefox.desktop"];
       };
     };
   };

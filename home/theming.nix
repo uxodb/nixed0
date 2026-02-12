@@ -1,9 +1,13 @@
-{ config, lib, pkgs, inputs, xSettings, ... }: 
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  xSettings,
+  ...
+}: let
   inherit (xSettings) appConfig;
 in {
-
   gtk.enable = true;
   qt = {
     enable = true;

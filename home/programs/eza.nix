@@ -1,5 +1,10 @@
-{ config, pkgs, lib, xSettings, ... }: {
-
+{
+  config,
+  pkgs,
+  lib,
+  xSettings,
+  ...
+}: {
   programs.eza = {
     enable = true;
     extraOptions = [
@@ -19,8 +24,8 @@
     llm = "eza -lbGd --header --sort=modified";
     la = "eza --long --all --group";
     lx = "eza -lbhHigUmuSa@ --time-style=long-iso --color-scale";
-    lS = "eza -1"; 
-    lt = "eza --tree --level=2"; 
+    lS = "eza -1";
+    lt = "eza --tree --level=2";
     "l." = "eza -a | grep -E '^\.'";
   };
 }

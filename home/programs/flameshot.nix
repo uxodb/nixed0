@@ -1,10 +1,13 @@
-{ config, pkgs, lib, xSettings, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  xSettings,
+  ...
+}: let
   inherit (xSettings) appConfig;
   inherit (config.home) homeDirectory;
 in {
-
   services.flameshot = {
     enable = true;
     package = pkgs.flameshot.override {
@@ -19,5 +22,4 @@ in {
       };
     };
   };
-
 }
