@@ -3,7 +3,7 @@
   home.packages = builtins.attrValues (
     let
       flakePackages = builtins.mapAttrs (
-        name: value: value.packages.${pkgs.system}.default) {
+        name: value: value.packages.${pkgs.stdenv.hostPlatform.system}.default) {
           inherit (inputs)
           json2nix;
         };
