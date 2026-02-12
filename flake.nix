@@ -23,12 +23,12 @@
       url = "github:Svenum/Solaar-Flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     alejandra = {
       url = "github:kamadorueda/alejandra/4.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -63,7 +63,7 @@
           inputs.catppuccin.nixosModules.catppuccin
           inputs.ucodenix.nixosModules.default
           inputs.solaar.nixosModules.default
-          inputs.dms.nixosModules.dank-material-shell
+          inputs.noctalia.nixosModules.default
           {
             environment.systemPackages = [alejandra.defaultPackage.x86_64-linux];
           }
@@ -72,14 +72,15 @@
 
       homeConfigurations."uxodb" = home-manager.lib.homeManagerConfiguration {
         pkgs = xpkgs;
-        extraSpecialArgs = { 
-          inherit inputs; 
+        extraSpecialArgs = {
+          inherit inputs;
 	  inherit xSettings;
         };
         modules = [
           ./home/default.nix
           inputs.catppuccin.homeManagerModules.catppuccin
           inputs.nix-colors.homeManagerModules.default
+          inputs.noctalia.homeModules.default
         ];
       };
     };
