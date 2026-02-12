@@ -21,4 +21,4 @@ steps:
       ssh_key:
         from_secret: gh_key
       author_name: woodpecker-ci[bot]
-      author_email: ${CI_COMMIT_AUTHOR_EMAIL}
+      author_email: 20535246+uxodb@users.noreply.github.com
