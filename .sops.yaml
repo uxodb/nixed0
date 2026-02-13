@@ -1,9 +1,7 @@
 keys:
   - &uxodb age1dhkg0a0hncze9kxzg8ku4vumkx0fspgnekgrrxtht7c8yvxk05wqrag82t
-  - &server age106qw0szjphjzdsj0vqrpzemefkwpfhpw4p0pmy6kpsv8u4w2c4hsdupk9v
 creation_rules:
   - path_regex: secrets\.(yaml|yml|json|env|ini)$
     key_groups:
       - age:
         - *uxodb
-        - *server
