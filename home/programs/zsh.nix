@@ -17,8 +17,6 @@
       # fzf.nix
       # fd.nix
     };
-    initContent = ''
-      fastfetch
-    '';
+    initContent = "fastfetch";
   };
 }
