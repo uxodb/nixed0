@@ -10,7 +10,7 @@
       (pkgs)
       curl
       gnupg
-      pinentry
+      pinentry-curses
       jq
       just
       manix
