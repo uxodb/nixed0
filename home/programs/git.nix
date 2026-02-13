@@ -7,8 +7,10 @@
 }: {
   programs.git = {
     enable = true;
-    userName = "uxodb";
-    userEmail = "20535246+${xSettings.username}@users.noreply.github.com";
+    settings.user = {
+      name = "uxodb";
+      email = "20535246+${xSettings.username}@users.noreply.github.com";
+    };
     extraConfig.init.defaultBranch = "main";
   };
 }
