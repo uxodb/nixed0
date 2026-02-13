@@ -7,7 +7,7 @@
 }: {
   programs.git = {
     enable = true;
-    settings = { 
+    settings = {
       user = {
         name = "uxodb";
         email = "20535246+${xSettings.username}@users.noreply.github.com";
