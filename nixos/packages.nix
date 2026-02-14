@@ -10,7 +10,6 @@
       (pkgs)
       curl
       gnupg
-      pinentry-curses
       jq
       just
       manix
@@ -20,6 +19,7 @@
       nix-melt
       nix-search-cli
       nurl
+      pinentry-curses
       sops
       ssh-to-age
       tree
