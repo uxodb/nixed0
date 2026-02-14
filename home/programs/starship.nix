@@ -9,6 +9,7 @@
 in {
   programs.starship = {
     enable = true;
+    enableZshIntegration = true;
     settings = {
       "$schema" = "https://starship.rs/config-schema.json";
       format = "[](fg:base_macchiato)$os$username[](bg:peach fg:base_macchiato)$directory[](fg:peach bg:green)$git_branch$git_status[](fg:green bg:sky)$c$rust$golang$nodejs$php$java$kotlin$haskell$python[](fg:sky bg:blue)$docker_context$conda[](fg:blue bg:pink)$time[ ](fg:pink)$line_break$character";
