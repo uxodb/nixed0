@@ -24,18 +24,17 @@ in {
       ss = "${homeDirectory}/Screenshots";
       casts = "${homeDirectory}/Screencasts";
     };
-    setOptions =
-      [
-        "NO_BEEP"
-        "NOMATCH"
-        "NOTIFY"
-        "NO_EXTENDEDGLOB"
-        "PUSHD_TO_HOME"
-        "GLOB_DOTS"
-        "SHORT_LOOPS"
-        "CHECK_JOBS"
-        "C_BASES"
-      ];
+    setOptions = [
+      "NO_BEEP"
+      "NOMATCH"
+      "NOTIFY"
+      "NO_EXTENDEDGLOB"
+      "PUSHD_TO_HOME"
+      "GLOB_DOTS"
+      "SHORT_LOOPS"
+      "CHECK_JOBS"
+      "C_BASES"
+    ];
     syntaxHighlighting.enable = true;
     shellAliases = {
       # eza.nix
@@ -54,7 +53,6 @@ in {
       save = 10000;
       share = true;
       size = 10000;
-
     };
   };
 }
