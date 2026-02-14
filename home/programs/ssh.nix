@@ -5,13 +5,17 @@
   xSettings,
   ...
 }: {
-  programs.ssh.matchBlocks = {
-    "*" = {
-      enable = true;
-      addKeysToAgent = "yes";
-      serverAliveInterval = 60;
-      serverAliveCountMax = 6;
+
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      "github.com" = {
+        user = "git";
+        hostname = "github.com";
+        identityFile = "${config.home.homeDirectory}/.ssh/github_id_ed25519";
+        identitiesOnly = true;
+      };
     };
-    extraConfig = builtins.readFile /run/secrets/sshconfig;
   };
 }
+    # extraConfig = builtins.readFile /run/secrets/sshconfig;
