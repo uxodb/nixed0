@@ -5,7 +5,6 @@
   xSettings,
   ...
 }: {
-
   programs.ssh = {
     enable = true;
     matchBlocks = {
@@ -18,4 +17,5 @@
     };
   };
 }
-    # extraConfig = builtins.readFile /run/secrets/sshconfig;
+# extraConfig = builtins.readFile /run/secrets/sshconfig;
+
