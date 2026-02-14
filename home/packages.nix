@@ -42,6 +42,7 @@
           nwg-look
           obs-studio
           p7zip
+          piper
           proton-pass
           protonmail-desktop
           protonvpn-gui
