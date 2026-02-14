@@ -60,9 +60,12 @@ in {
       LC_TIME = locale;
     };
   };
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = 1;
-    MOZ_ENABLE_WAYLAND = 1;
+  environment = {
+    pathsToLink = ["/share/zsh"];
+    sessionVariables = {
+      NIXOS_OZONE_WL = 1;
+      MOZ_ENABLE_WAYLAND = 1;
+    };
   };
   hardware = {
     ckb-next.enable = true;
