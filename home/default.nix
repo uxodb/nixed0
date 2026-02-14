@@ -60,6 +60,15 @@ in {
       enable = true;
       defaultApplications = {
         "text/html" = ["firefox.desktop"];
+        "x-scheme-handler/http" = ["firefox.desktop"];
+        "x-scheme-handler/https" = ["firefox.desktop"];
+        "video/mp4" = ["mpv.desktop"];
+        "video/x-matroska" = ["mpv.desktop"];
+        "video/WebM" = ["mpv.desktop"];
+        "image/jpeg" = ["feh.desktop"];
+        "image/png" = ["feh.desktop"];
+        "image/gif" = ["feh.desktop"];
+        "image/webp" = ["feh.desktop"];
       };
     };
   };
