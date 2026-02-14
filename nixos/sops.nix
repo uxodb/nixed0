@@ -24,10 +24,6 @@ in {
         # age key convert
         mode = "0444";
       };
-      sshconfig = {
-        owner = username;
-        path = "${homeDir}/.ssh/config";
-      };
       userpasswd = {
         neededForUsers = true;
       };
