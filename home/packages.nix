@@ -34,6 +34,7 @@
           gnome-calendar
           gnome-clocks
           google-chrome
+          heroic
           keepassxc
           mpc-qt
           mpv
@@ -46,6 +47,7 @@
           proton-pass
           protonmail-desktop
           protonvpn-gui
+          proton-vpn-cli
           signal-desktop
           slurp
           swappy
