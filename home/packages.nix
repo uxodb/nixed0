@@ -53,8 +53,10 @@
           vesktop
           waypaper
           wf-recorder
+          wireguard-tools
           wl-clipboard
           wl-screenrec
+          xwayland-satellite
           ;
       };
     in
