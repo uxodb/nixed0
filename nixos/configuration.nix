@@ -42,6 +42,9 @@ in {
 
   networking = {
     hostName = hostname;
+    networkmanager = {
+      enable = true;
+    };
   };
 
   time.timeZone = timezone;
@@ -88,7 +91,7 @@ in {
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "networkmanager"];
     shell = pkgs.zsh;
     uid = 1000;
     hashedPasswordFile = config.sops.secrets.userpasswd.path;
