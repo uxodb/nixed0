@@ -10,6 +10,7 @@
       (pkgs)
       curl
       gnupg
+      htop
       jq
       just
       manix
