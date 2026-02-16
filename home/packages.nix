@@ -54,6 +54,7 @@
           swww
           vesktop
           waypaper
+          weechat
           wf-recorder
           wireguard-tools
           wl-clipboard
