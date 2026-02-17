@@ -45,13 +45,14 @@
           p7zip
           piper
           proton-pass
+          proton-vpn-cli
           protonmail-desktop
           protonvpn-gui
-          proton-vpn-cli
           signal-desktop
           slurp
           swappy
           swww
+          tibia
           vesktop
           waypaper
           weechat
