@@ -49,11 +49,11 @@ in {
       pictures = "$HOME/Pictures";
       videos = "$HOME/Videos";
       extraConfig = {
-        XDG_PROJECTS_DIR = "$HOME/Projects";
-        XDG_GAMES_DIR = "$HOME/Games";
-        XDG_MISC_DIR = "$HOME/Misc";
-        XDG_SCREENSHOTS_DIR = "$HOME/Pictures/Screenshots";
-        XDG_SCREENCASTS_DIR = "$HOME/Videos/Screencasts";
+        PROJECTS = "$HOME/Projects";
+        GAMES = "$HOME/Games";
+        MISC = "$HOME/Misc";
+        SCREENSHOTS = "$HOME/Pictures/Screenshots";
+        SCREENCASTS = "$HOME/Videos/Screencasts";
       };
     };
     mimeApps = {
