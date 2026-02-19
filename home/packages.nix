@@ -36,6 +36,7 @@
           google-chrome
           heroic
           keepassxc
+          librewolf
           mpc-qt
           mpv
           nautilus
@@ -52,7 +53,6 @@
           slurp
           swappy
           swww
-          tibia
           vesktop
           waypaper
           weechat
