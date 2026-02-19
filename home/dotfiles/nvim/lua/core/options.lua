@@ -19,28 +19,13 @@ set.smartindent = true                                  -- make indenting smarte
 set.number = true                                       -- show linenumbers
 set.splitbelow = true                                   -- open new file with hsplit below
 set.splitright = true                                   -- open new file with vsplit on the right
-set.clipboard = "unnamedplus"          -- allows nvim to access system clipboard
+set.clipboard = "unnamedplus"                           -- allows nvim to access system clipboard
 set.conceallevel = 0                                    -- so that `` is visible in markdown files
 set.fileencoding = "utf-8"                              -- the encoding written to a file
 set.hlsearch = true                                     -- highlight all matches on previous search pattern
 set.showmode = true                                     -- Show mode like INSERT, NORMAL
 set.swapfile = false                                    -- creates a swapfile
 set.timeoutlen = 1000                                   -- time to wait for a mapped sequence to complete in ms
-set.relativenumber = false                              -- show relative linenumbers
+set.relativenumber = true                               -- show relative linenumbers
 set.numberwidth = 4                                     -- set number column width to 4 (default: 4)
-
-
---vim.g.clipboard = {
---   name = 'WslClipboard',
-----   copy = {
-----      ['+'] = copy,
-----      ['*'] = copy,
-----    },
---   paste = {
---      ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---      ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---   },
---     cache_enabled = true,
---   }
---
 
