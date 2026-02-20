@@ -1,8 +1,12 @@
-{ config, inputs, xSettings, ... }:
-let
+{
+  config,
+  inputs,
+  xSettings,
+  ...
+}: let
   inherit (xSettings) hostname;
   homeDir = config.home.homeDirectory;
-in{
+in {
   sops = {
     defaultSopsFile = ./secrets.json;
     age.keyFile = "${homeDir}/.config/sops/age/keys.txt";

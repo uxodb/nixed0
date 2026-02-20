@@ -23,7 +23,7 @@ in {
       lsw = {
         user = lsw_user;
         hostname = lsw_host;
-        port = builtins.fromJSON (lsw_port);
+        port = builtins.fromJSON lsw_port;
         identityFile = "${homeDir}/.ssh/lsw_id_ed25519";
         identitiesOnly = true;
       };
@@ -36,4 +36,3 @@ in {
     };
   };
 }
-
