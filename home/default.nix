@@ -11,6 +11,7 @@ in {
     ./programs
     ./theming.nix
     ./packages.nix
+    ./sops.nix
   ];
 
   nixpkgs = {

@@ -20,6 +20,10 @@ in {
         owner = username;
         path = "${homeDir}/.ssh/lsw_id_ed25519";
       };
+      vps_id_ed25519 = {
+        owner = username;
+        path = "${homeDir}/.ssh/vps_id_ed25519";
+      };
       nixed0_id_ed25519 = {
         # age key convert
         mode = "0444";

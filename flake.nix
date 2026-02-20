@@ -88,6 +88,7 @@
         inputs.catppuccin.homeManagerModules.catppuccin
         inputs.nix-colors.homeManagerModules.default
         inputs.noctalia.homeModules.default
+        inputs.sops-nix.homeManagerModules.sops
       ];
     };
   };
