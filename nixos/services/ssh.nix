@@ -6,6 +6,6 @@
   ...
 }: {
   programs.ssh = {
-    startAgent = false;
+    startAgent = true;
   };
 }
