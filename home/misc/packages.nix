@@ -1,4 +1,3 @@
-
 {
   config,
   pkgs,
@@ -6,10 +5,10 @@
   ...
 }: {
   home.packages = builtins.attrValues {
-        inherit
-          (pkgs)
-          remmina
-          citrix-workspace
-          ;
-      };
+    inherit
+      (pkgs)
+      remmina
+      citrix-workspace
+      ;
+  };
 }
