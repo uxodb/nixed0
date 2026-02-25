@@ -12,6 +12,7 @@ in {
     ./theming.nix
     ./packages.nix
     ./sops.nix
+    ./misc/packages.nix
   ];
 
   nixpkgs = {
