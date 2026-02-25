@@ -8,7 +8,7 @@
     inherit
       (pkgs)
       remmina
-      citrix-workspace
+      citrix_workspace
       ;
   };
 }
