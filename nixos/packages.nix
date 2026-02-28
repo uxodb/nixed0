@@ -9,6 +9,7 @@
     inherit
       (pkgs)
       curl
+      dig
       gnupg
       htop
       jq
