@@ -28,13 +28,16 @@ in {
     # ];
   };
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      devices = ["nodev"];
-      efiSupport = true;
-      useOSProber = true;
+  boot = {
+    kernelParams = ["ipv6.disable=1"];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        devices = ["nodev"];
+        efiSupport = true;
+        useOSProber = true;
+      };
     };
   };
 
@@ -42,8 +45,11 @@ in {
 
   networking = {
     hostName = hostname;
+    # enableIPv6 = false;
+    nameservers = ["127.0.0.1"];
     networkmanager = {
       enable = true;
+      dns = "none";
     };
   };
 
