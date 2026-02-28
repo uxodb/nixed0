@@ -1,4 +1,3 @@
-
 {
   config,
   pkgs,
@@ -29,10 +28,9 @@
     "odoh-snowstorm"
   ];
   listenAddrs =
-    if useIPv6 then
-      [ "[::]:53" ]
-    else
-      [ "127.0.0.1:53"];
+    if useIPv6
+    then ["[::]:53"]
+    else ["127.0.0.1:53"];
 
   blocklist_oisd = builtins.readFile inputs.oisd;
   blocklist_hagezi = builtins.readFile inputs.hagezi;
@@ -169,43 +167,43 @@ in {
           }
           {
             server_name = "dnscrypt.eu-nl";
-            via = [ "anon-cs-nl" "dnscry.pt-anon-naaldwijk-ipv4" ];
+            via = ["anon-cs-nl" "dnscry.pt-anon-naaldwijk-ipv4"];
           }
           {
             server_name = "dnscrypt.eu-dk";
-            via = [ "anon-cs-norway" "dnscry.pt-anon-copenhagen-ipv4" ];
+            via = ["anon-cs-norway" "dnscry.pt-anon-copenhagen-ipv4"];
           }
           {
             server_name = "mullvad-se";
-            via = [ "anon-cs-swe" "dnscry.pt-anon-stockholm02-ipv4" ];
+            via = ["anon-cs-swe" "dnscry.pt-anon-stockholm02-ipv4"];
           }
           {
             server_name = "mullvad-doh-se";
-            via = [ "anon-cs-finland" "dnscry.pt-anon-helsinki-ipv4" ];
+            via = ["anon-cs-finland" "dnscry.pt-anon-helsinki-ipv4"];
           }
           {
             server_name = "quad9-dnscrypt-ip4-filter-pri";
-            via = [ "anon-cs-de" "dnscry.pt-anon-frankfurt02-ipv4" ];
+            via = ["anon-cs-de" "dnscry.pt-anon-frankfurt02-ipv4"];
           }
           {
             server_name = "quad9-dnscrypt-ip4-filter-alt";
-            via = [ "anon-cs-fr" "dnscry.pt-anon-paris-ipv4" ];
+            via = ["anon-cs-fr" "dnscry.pt-anon-paris-ipv4"];
           }
           {
             server_name = "cs-fr";
-            via = [ "dnscry.pt-anon-paris-ipv4" "anon-scaleway" ];
+            via = ["dnscry.pt-anon-paris-ipv4" "anon-scaleway"];
           }
           {
             server_name = "cs-de";
-            via = [ "dnscry.pt-anon-frankfurt02-ipv4" "anon-digitalprivacy.diy-ipv4" ];
+            via = ["dnscry.pt-anon-frankfurt02-ipv4" "anon-digitalprivacy.diy-ipv4"];
           }
           {
             server_name = "cs-ch";
-            via = [ "dnscry.pt-anon-geneva-ipv4" "anon-kama" ];
+            via = ["dnscry.pt-anon-geneva-ipv4" "anon-kama"];
           }
           {
             server_name = "dnscry.pt-amsterdam";
-            via = [ "anon-cs-nl" "anon-serbica" ];
+            via = ["anon-cs-nl" "anon-serbica"];
           }
         ];
       };
