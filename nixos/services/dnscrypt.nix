@@ -6,7 +6,7 @@
   ...
 }: let
   useODoH = true;
-  useDoH = true;
+  useDoH = false;
   useDNSCrypt = true;
   requireDNSSec = true;
   requireNoLog = true;
@@ -19,12 +19,14 @@
     "mullvad-doh-se"
     "quad9-dnscrypt-ip4-filter-pri"
     "quad9-dnscrypt-ip4-filter-alt"
-    "adguard-dns"
-    "adguard-dns-family"
+    # "adguard-dns"
+    # "adguard-dns-family"
     "cs-fr"
     "cs-de"
     "cs-ch"
     "dnscry.pt-amsterdam"
+    "odoh-cloudflare"
+    "odoh-snowstorm"
   ];
   listenAddrs =
     if useIPv6 then
@@ -37,7 +39,7 @@
   blocklists_combined_txt = pkgs.writeText "blocklist.txt" ''
     ${blocklist_oisd}
     ${blocklist_hagezi}
-  ''
+  '';
   stateDir = "dnscrypt-proxy";
   statePath = "/var/lib/${stateDir}";
 in {
@@ -104,7 +106,7 @@ in {
       };
       blocked_names = {
         blocked_names_file = "${blocklists_combined_txt}";
-        log_files = "${statePath}/blocked-names.txt";
+        log_file = "${statePath}/blocked-names.txt";
         log_format = "tsv";
       };
       # blocked_ips = {
@@ -126,7 +128,7 @@ in {
         relays = {
           urls = [
             "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/relays.md"
-            "https://download.dnscrypt.info/resolvers-list/v3/relays.md";
+            "https://download.dnscrypt.info/resolvers-list/v3/relays.md"
           ];
           cache_file = "${statePath}/relays.md";
           minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
@@ -153,81 +155,59 @@ in {
           refresh_delay = 73;
           prefix = "";
         };
-        anonymized_dns = {
-          skip_incompatible = true;
-          routes = [
-            {
-              server_name = "odoh-snowstorm";
-              via = ["odohrelay-crypto-sx"];
-            }
-            {
-              server_name = "odoh-cloudflare";
-              via = ["odohrelay-crypto-sx"]
-            }
-            {
-              server_name = "dnscrypt.eu-nl";
-              via = [ "anon-cs-nl" "dnscry.pt-anon-naaldwijk-ipv4" ];
-            }
-            {
-              server_name = "dnscrypt.eu-dk";
-              via = [ "anon-cs-norway" "dnscry.pt-anon-copenhagen-ipv4" ];
-            }
-            {
-              server_name = "mullvad-se";
-              via = [ "anon-cs-swe" "dnscry.pt-anon-stockholm02-ipv4" ];
-            }
-            {
-              server_name = "mullvad-doh-se";
-              via = [ "anon-cs-finland" "dnscry.pt-anon-helsinki-ipv4" ];
-            }
-            {
-              server_name = "quad9-dnscrypt-ip4-filter-pri";
-              via = [ "anon-cs-de" "dnscry.pt-anon-frankfurt02-ipv4" ];
-            }
-            {
-              server_name = "quad9-dnscrypt-ip4-filter-alt";
-              via = [ "anon-cs-fr" "dnscry.pt-anon-paris-ipv4" ];
-            }
-            {
-              server_name = "adguard-dns";
-              via = [ "anon-cs-nl" "dnscry.pt-anon-amsterdam-ipv4" ];
-            }
-            {
-              server_name = "adguard-dns-family";
-              via = [ "anon-cs-belgium" "dnscry.pt-anon-brussels-ipv4" ];
-            }
-            {
-              server_name = "cs-fr";
-              via = [ "dnscry.pt-anon-paris-ipv4" "anon-scaleway" ];
-            }
-            {
-              server_name = "cs-de";
-              via = [ "dnscry.pt-anon-frankfurt02-ipv4" "anon-digitalprivacy.diy-ipv4" ];
-            }
-            {
-              server_name = "cs-ch";
-              via = [ "dnscry.pt-anon-geneva-ipv4" "anon-kama" ];
-            }
-            {
-              server_name = "dnscry.pt-amsterdam";
-              via = [ "anon-cs-nl" "anon-serbica" ];
-            }
-          ];
-        };
       };
-      monitoring_ui = {
-        enabled = true;
-        listen_address = "127.0.0.1:8080";
-        username = "";
-        password = "";
-        tls_certificate = "";
-        tls_key = "";
-        enable_query_log = true;
-        privacy_level = "0";
-        max_query_log_entries = 100;
-        max_memory_mb = 1024;
-        prometheus_enabled = false;
-        prometheus_path = "/metrics";
+      anonymized_dns = {
+        skip_incompatible = true;
+        routes = [
+          {
+            server_name = "odoh-snowstorm";
+            via = ["odohrelay-crypto-sx"];
+          }
+          {
+            server_name = "odoh-cloudflare";
+            via = ["odohrelay-crypto-sx"];
+          }
+          {
+            server_name = "dnscrypt.eu-nl";
+            via = [ "anon-cs-nl" "dnscry.pt-anon-naaldwijk-ipv4" ];
+          }
+          {
+            server_name = "dnscrypt.eu-dk";
+            via = [ "anon-cs-norway" "dnscry.pt-anon-copenhagen-ipv4" ];
+          }
+          {
+            server_name = "mullvad-se";
+            via = [ "anon-cs-swe" "dnscry.pt-anon-stockholm02-ipv4" ];
+          }
+          {
+            server_name = "mullvad-doh-se";
+            via = [ "anon-cs-finland" "dnscry.pt-anon-helsinki-ipv4" ];
+          }
+          {
+            server_name = "quad9-dnscrypt-ip4-filter-pri";
+            via = [ "anon-cs-de" "dnscry.pt-anon-frankfurt02-ipv4" ];
+          }
+          {
+            server_name = "quad9-dnscrypt-ip4-filter-alt";
+            via = [ "anon-cs-fr" "dnscry.pt-anon-paris-ipv4" ];
+          }
+          {
+            server_name = "cs-fr";
+            via = [ "dnscry.pt-anon-paris-ipv4" "anon-scaleway" ];
+          }
+          {
+            server_name = "cs-de";
+            via = [ "dnscry.pt-anon-frankfurt02-ipv4" "anon-digitalprivacy.diy-ipv4" ];
+          }
+          {
+            server_name = "cs-ch";
+            via = [ "dnscry.pt-anon-geneva-ipv4" "anon-kama" ];
+          }
+          {
+            server_name = "dnscry.pt-amsterdam";
+            via = [ "anon-cs-nl" "anon-serbica" ];
+          }
+        ];
       };
     };
   };
