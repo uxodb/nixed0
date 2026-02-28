@@ -61,9 +61,9 @@ in {
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "text/html" = ["firefox.desktop"];
-        "x-scheme-handler/http" = ["firefox.desktop"];
-        "x-scheme-handler/https" = ["firefox.desktop"];
+        "text/html" = ["librewolf.desktop"];
+        "x-scheme-handler/http" = ["librewolf.desktop"];
+        "x-scheme-handler/https" = ["librewolf.desktop"];
         "video/mp4" = ["mpv.desktop"];
         "video/matroska" = ["mpv.desktop"];
         "video/WebM" = ["mpv.desktop"];
@@ -71,7 +71,7 @@ in {
         "image/png" = ["feh.desktop"];
         "image/gif" = ["feh.desktop"];
         "image/webp" = ["feh.desktop"];
-        "application/rdp" = ["remmina.desktop"];
+        "application/rdp" = ["org.remmina.Remmina.desktop"];
       };
     };
   };
