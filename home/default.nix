@@ -71,6 +71,7 @@ in {
         "image/png" = ["feh.desktop"];
         "image/gif" = ["feh.desktop"];
         "image/webp" = ["feh.desktop"];
+        "application/rdp" = ["remmina.desktop"];
       };
     };
   };
