@@ -29,6 +29,7 @@
       unzip
       wget
       yubikey-manager
+      yubioath-flutter
       ;
     #    astronaut = pkgs.callPackage ../pkgs/sddm-astronaut.nix {
     #     embeddedTheme = "pixel_sakura";
