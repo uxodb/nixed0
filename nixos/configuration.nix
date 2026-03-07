@@ -83,9 +83,14 @@ in {
       enable32Bit = true;
     };
   };
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
+  xdg = {
+    mime = {
+      enable = true;
+    };
+    portal = {
+      enable = true;
+      wlr.enable = true;
+    };
   };
 
   security = {
