@@ -49,6 +49,7 @@
           proton-vpn-cli
           protonmail-desktop
           protonvpn-gui
+          qdirstat
           signal-desktop
           slurp
           swappy
