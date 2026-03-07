@@ -71,6 +71,8 @@ in {
         "image/png" = ["feh.desktop"];
         "image/gif" = ["feh.desktop"];
         "image/webp" = ["feh.desktop"];
+        "application/x-rdp" = ["org.remmina.Remmina-file.desktop"];
+        "x-scheme-handler/rdp" = ["org.remmina.Remmina-file.desktop"];
       };
     };
   };
