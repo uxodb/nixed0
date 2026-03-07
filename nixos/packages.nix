@@ -9,6 +9,7 @@
     inherit
       (pkgs)
       curl
+      dig
       gnupg
       htop
       jq
@@ -27,6 +28,7 @@
       unrar
       unzip
       wget
+      yubikey-manager
       ;
     #    astronaut = pkgs.callPackage ../pkgs/sddm-astronaut.nix {
     #     embeddedTheme = "pixel_sakura";

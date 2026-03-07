@@ -21,8 +21,8 @@ in {
       vids = "${homeDirectory}/Videos";
       games = "${homeDirectory}/Games";
       proj = "${homeDirectory}/Projects";
-      ss = "${homeDirectory}/Screenshots";
-      casts = "${homeDirectory}/Screencasts";
+      ss = "${homeDirectory}/Pictures/Screenshots";
+      casts = "${homeDirectory}/Videos/Screencasts";
     };
     setOptions = [
       "NO_BEEP"

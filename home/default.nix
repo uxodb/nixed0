@@ -61,11 +61,11 @@ in {
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "text/html" = ["firefox.desktop"];
-        "x-scheme-handler/http" = ["firefox.desktop"];
-        "x-scheme-handler/https" = ["firefox.desktop"];
+        "text/html" = ["librewolf.desktop"];
+        "x-scheme-handler/http" = ["librewolf.desktop"];
+        "x-scheme-handler/https" = ["librewolf.desktop"];
         "video/mp4" = ["mpv.desktop"];
-        "video/x-matroska" = ["mpv.desktop"];
+        "video/matroska" = ["mpv.desktop"];
         "video/WebM" = ["mpv.desktop"];
         "image/jpeg" = ["feh.desktop"];
         "image/png" = ["feh.desktop"];

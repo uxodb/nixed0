@@ -31,6 +31,14 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    oisd = {
+      url = "https://big.oisd.nl/domainswild";
+      flake = false;
+    };
+    hagezi = {
+      url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt";
+      flake = false;
+    };
   };
 
   outputs = {
