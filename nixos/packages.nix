@@ -10,6 +10,7 @@
       (pkgs)
       curl
       dig
+      efibootmgr
       gnupg
       htop
       jq

@@ -18,24 +18,44 @@
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/e396c7a5-42fc-4cfc-82b1-d7ac94e27533";
-    fsType = "ext4";
+    device = "/dev/mapper/nixed0_crypt";
+    fsType = "btrfs";
+    options = ["subvol=@"];
   };
 
+  boot.initrd.luks.devices."nixed0_crypt".device = "/dev/disk/by-uuid/76ba56c3-b53d-4718-bdad-1780e66bd5c2";
+
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/250D-D930";
+    device = "/dev/disk/by-label/ESP";
     fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
+    options = ["fmask=0077" "dmask=0077"];
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/mapper/nixed0_crypt";
+    fsType = "btrfs";
+    options = ["subvol=@nix"];
+  };
+
+  fileSystems."/.snapshots" = {
+    device = "/dev/mapper/nixed0_crypt";
+    fsType = "btrfs";
+    options = ["subvol=@snapshots"];
+  };
+
+  fileSystems."/persist" = {
+    device = "/dev/mapper/nixed0_crypt";
+    fsType = "btrfs";
+    options = ["subvol=@persist"];
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/mapper/nixed0_crypt";
+    fsType = "btrfs";
+    options = ["subvol=@home"];
   };
 
   swapDevices = [];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp34s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
