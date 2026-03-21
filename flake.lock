@@ -149,7 +149,7 @@
     "hagezi": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-c44zXHTrlntEoRtqAOraLTQQpSUIqaqxFTNv3dEWbhY=",
+        "narHash": "sha256-7XTrDcjfcowBgIHT+amuU+6++tTm4fzU1OGK4OX5Sg0=",
         "type": "file",
         "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt"
       },
@@ -160,11 +160,11 @@
     },
     "hardware": {
       "locked": {
-        "lastModified": 1773533765,
-        "narHash": "sha256-qonGfS2lzCgCl59Zl63jF6dIRRpvW3AJooBGMaXjHiY=",
+        "lastModified": 1774018263,
+        "narHash": "sha256-HHYEwK1A22aSaxv2ibhMMkKvrDGKGlA/qObG4smrSqc=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "f8e82243fd601afb9f59ad230958bd073795cbfe",
+        "rev": "2d4b4717b2534fad5c715968c1cece04a172b365",
         "type": "github"
       },
       "original": {
@@ -195,11 +195,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773898372,
-        "narHash": "sha256-PqeDgmyI/Df3/Mv0B81FP/ZC4KuO88YRQF5ZfeFyA4k=",
+        "lastModified": 1774007980,
+        "narHash": "sha256-FOnZjElEI8pqqCvB6K/1JRHTE8o4rer8driivTpq2uo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ecf019baf47df009937b5f8c4604cee10f410a76",
+        "rev": "9670de2921812bc4e0452f6e3efd8c859696c183",
         "type": "github"
       },
       "original": {
@@ -316,11 +316,11 @@
         "noctalia-qs": "noctalia-qs"
       },
       "locked": {
-        "lastModified": 1773925146,
-        "narHash": "sha256-gccci8li5UaXsCgrgmT2TAgt1d4XJeHa9WyCkW/t6VY=",
+        "lastModified": 1774107311,
+        "narHash": "sha256-xs6y9oZjT94WtiML53ARszFIOPJHqbHkBKonXH4TNjg=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "e08b08893e2194c0f6dc172f858e788ba825904d",
+        "rev": "bef335ab3a32862d4b24ec79d79eabb82ab5d15d",
         "type": "github"
       },
       "original": {
@@ -355,7 +355,7 @@
     "oisd": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-hdePB5sEybXpZxtm3B55iYYgxpyEIFV4SSPwNMwx0b0=",
+        "narHash": "sha256-K0N7ktN+ZpkBgsmtkNrvh20NgLHqk9JsUYriZJ5GcI4=",
         "type": "file",
         "url": "https://big.oisd.nl/domainswild"
       },
