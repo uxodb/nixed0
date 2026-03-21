@@ -36,7 +36,6 @@
           google-chrome
           heroic
           keepassxc
-          librewolf
           mpc-qt
           mpv
           nautilus
